@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MotionStaggerDiv, MotionFadeInUp } from './AnimationUtils'; // Added AnimationUtils import
-import waveGradient from '../assets\\Images\\circular_gradient.png';
+// import waveGradient from '../assets/Images/circular_gradient.png';
 
 export default function WhyChooseUs() {
   const cards = [
@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
         }}
         viewport={{ once: true, amount: 0.8 }}
       >
-        <img src={waveGradient} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        {/* <img src={waveGradient} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> */}
       </motion.div>
 
       {/* Title */}
