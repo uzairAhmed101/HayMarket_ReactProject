@@ -5,7 +5,7 @@ import logoBar23 from '../assets/Images/LogoBar-2-3.png';
 import logoBar24 from '../assets/Images/LogoBar-2-4.png';
 import logoBar25 from '../assets/Images/LogoBar-2-5.png';
 
-export default function BadgeBar() {
+export default function Logobar2() {
   return (
     <>
       <style>{`

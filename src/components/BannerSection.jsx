@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function HeroSection() {
+export default function BannerSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
