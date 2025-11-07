@@ -1,6 +1,6 @@
 import React from 'react'
 import Disclaimer from '../components/Disclaimer.jsx'
-import HeroSection from '../components/HeroSection.jsx'
+import HeroSection from '../components/BannerSection.jsx'
 import Navbar from '../components/navbar.jsx'
 import Header from '../components/Header.jsx'
 import LetsTheWorldKnow from '../components/letsTheWorldKnow.jsx'
@@ -13,7 +13,7 @@ import FAQ from '../components/FAQ.jsx'
 import Blogs from '../components/Blogs.jsx'
 import Form from '../components/Form.jsx'
 import ContactFooter from '../components/ContactFooter.jsx'
-import Logobar2 from '../components/LogoBar-2.jsx'
+import Logobar2 from '../components/Logo.jsx'
 import Disclaimer2 from '../components/Disclaimerfooter.jsx'
 
 // Force redeploy to fix import issues
