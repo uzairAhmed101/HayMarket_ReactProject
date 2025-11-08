@@ -6,6 +6,19 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'tusker': ['TuskerGrotesk', 'sans-serif'],
+      },
+      // Adding the missing xs breakpoint
+      screens: {
+        'xs': '480px',
+        // Keeping existing breakpoints
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
       animation: {
         marquee: 'marquee 15s linear infinite',
       },

@@ -29,7 +29,7 @@ export default function BannerSection() {
           <p className="text-[13px] font-semibold tracking-wider text-[#333] mb-[15px]">
             BECOME A GLOBALLY PUBLISHED AUTHOR TODAY
           </p>
-          <h1 className="text-[42px] leading-[1.2] font-extrabold mb-[25px]">
+          <h1 className="text-[42px] leading-[1.2] font-extrabold mb-[25px] font-tusker" style={{ fontFamily: 'TuskerGrotesk, Arial, sans-serif' }}>
             <span className="text-[#8E2DE2]">SELF PUBLISH AND BE A</span><br />
             <span className="text-black">WORLD-FAMOUS AUTHOR TODAY!</span>
           </h1>
@@ -53,7 +53,7 @@ export default function BannerSection() {
         <div className="flex justify-end w-full">
           <div className="bg-white rounded-[15px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] overflow-hidden w-full max-w-[450px]">
             <div className="bg-gradient-to-r from-[#8E2DE2] to-[#4A00E0] p-5 text-center">
-              <h2 className="text-white text-xl font-bold tracking-wider">LET'S GET STARTED !</h2>
+              <h2 className="text-white text-xl font-bold tracking-wider font-tusker" style={{ fontFamily: 'TuskerGrotesk, Arial, sans-serif' }}>LET'S GET STARTED !</h2>
             </div>
             <form onSubmit={handleSubmit} className="p-[30px] flex flex-col gap-[15px]">
               <input

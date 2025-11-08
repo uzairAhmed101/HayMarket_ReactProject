@@ -72,7 +72,7 @@ export default function FAQSection() {
       </motion.div>
 
       <div className="text-center mb-[60px] relative z-[1] md:mb-10 max-[480px]:mb-[30px]">
-        <h1 className="text-[40px] font-bold text-[#1a1a1a] tracking-[1px] lg:text-[36px] md:text-[32px] max-[480px]:text-[28px]">
+        <h1 className="text-[40px] font-bold text-[#1a1a1a] tracking-[1px] lg:text-[36px] md:text-[32px] max-[480px]:text-[28px] font-tusker">
           FREQUENTLY ASKED <span className="text-[#a020f0]">QUESTIONS</span>
         </h1>
       </div>
@@ -88,7 +88,7 @@ export default function FAQSection() {
                 }`}
                 onClick={() => toggleFAQ(index)}
               >
-                <div className="text-[15px] font-semibold text-[#333] flex-1 text-left lg:text-[14px] md:text-[14px] max-[480px]:text-[13px]">
+                <div className="text-[15px] font-semibold text-[#333] flex-1 text-left lg:text-[14px] md:text-[14px] max-[480px]:text-[13px] font-tusker">
                   {faq.question}
                 </div>
                 <div className={`w-[35px] h-[35px] min-w-[35px] bg-gradient-to-br from-[#a020f0] to-[#d020f0] rounded-full flex items-center justify-center text-white text-xl transition-all duration-300 ease-in-out ml-[15px] max-[480px]:w-[30px] max-[480px]:h-[30px] max-[480px]:min-w-[30px] max-[480px]:text-lg ${
@@ -116,7 +116,7 @@ export default function FAQSection() {
                 }`}
                 onClick={() => toggleFAQ(index + 3)}
               >
-                <div className="text-[15px] font-semibold text-[#333] flex-1 text-left lg:text-[14px] md:text-[14px] max-[480px]:text-[13px]">
+                <div className="text-[15px] font-semibold text-[#333] flex-1 text-left lg:text-[14px] md:text-[14px] max-[480px]:text-[13px] font-tusker">
                   {faq.question}
                 </div>
                 <div className={`w-[35px] h-[35px] min-w-[35px] bg-gradient-to-br from-[#a020f0] to-[#d020f0] rounded-full flex items-center justify-center text-white text-xl transition-all duration-300 ease-in-out ml-[15px] max-[480px]:w-[30px] max-[480px]:h-[30px] max-[480px]:min-w-[30px] max-[480px]:text-lg ${
@@ -136,7 +136,7 @@ export default function FAQSection() {
       </div>
 
       <div className="flex justify-center mt-[50px] relative z-[1] md:mt-10 max-[480px]:mt-[30px]">
-        <button className="bg-gradient-to-br from-[#a020f0] to-[#d020f0] text-white border-none py-[14px] px-10 rounded-[25px] text-[15px] font-semibold cursor-pointer transition-all duration-300 ease-in-out shadow-[0_5px_20px_rgba(160,32,240,0.3)] hover:translate-y-[-3px] hover:shadow-[0_8px_30px_rgba(160,32,240,0.4)] active:translate-y-[-1px] md:py-3 md:px-[35px] md:text-sm max-[480px]:py-3 max-[480px]:px-[30px] max-[480px]:text-[13px]">
+        <button className="bg-gradient-to-br from-[#a020f0] to-[#d020f0] text-white border-none py-[14px] px-10 rounded-[25px] text-[15px] font-semibold cursor-pointer transition-all duration-300 ease-in-out shadow-[0_5px_20px_rgba(160,32,240,0.3)] hover:translate-y-[-3px] hover:shadow-[0_8px_30px_rgba(160,32,240,0.4)] active:translate-y-[-1px] md:py-3 md:px-[35px] md:text-sm max-[480px]:py-3 max-[480px]:px-[30px] max-[480px]:text-[13px] font-tusker">
           Chat With Us
         </button>
       </div>

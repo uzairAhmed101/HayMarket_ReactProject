@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import publishingIcon from '../assets/Images/Services Publishing Icon 1 (1).png';
 import publishingIcon2 from '../assets/Images/Services Publishing Icon 1 (2).png';
 import publishingIcon3 from '../assets/Images/Services Publishing Icon 1 (3).png';
@@ -37,44 +36,22 @@ export default function ServicesSection() {
 
   return (
     <section className="relative w-full px-16 py-[60px] lg:px-5 md:px-[15px] sm:px-[10px] sm:py-[40px]">
-      {/* Decorative elements */}
-      <motion.div 
+      {/* Decorative elements*/}
+      <div 
         className="absolute z-0 pointer-events-none -top-[415px] -left-1 h-[89%] origin-center"
         style={{ rotate: '-25deg' }}
-        initial={{ opacity: 0, x: -200, y: -100 }}
-        animate={{ 
-          opacity: 1, 
-          x: 0, 
-          y: 0,
-          transition: { 
-            duration: 1, 
-            ease: "easeOut",
-            delay: 0.3
-          }
-        }}
-        whileInView={{ 
-          x: [0, -20, 0, 20, 0],
-          y: [0, 20, 0, -20, 0],
-          transition: { 
-            duration: 6,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          }
-        }}
-        viewport={{ once: true, amount: 0.5, margin: "-100px 0px -100px 0px" }}
       >
         <img 
           src={halfCircleGradient} 
           alt="" 
           className="h-[83%] w-auto object-cover" 
         />
-      </motion.div>
+      </div>
 
-      <div className="mx-auto relative z-10 w-full max-w-[1200px]">
+      <div className="mx-auto relative z-10 w-full py-4 ">
         {/* Header */}
         <div className="text-center mb-[60px]">
-          <h2 className="text-6xl font-black mb-5 text-black lg:text-5xl md:text-4xl sm:text-3xl">
+          <h2 className="text-6xl font-black mb-5 text-black lg:text-5xl md:text-4xl sm:text-3xl font-tusker">
             OUR <span className="text-[#8E2DE2]">SERVICES</span>
           </h2>
           <p className="text-sm leading-relaxed text-[#555] max-w-[800px] mx-auto lg:text-[14px] md:text-[13px] sm:text-[12px]">
@@ -85,7 +62,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Services Cards */}
-        <div className="overflow-hidden mb-10 w-full">
+        <div className="overflow-hidden mb-10 w-full overflow-visible">
           <div 
             className="flex gap-5 transition-transform duration-300 ease-in-out justify-start pl-28"
             style={{ transform: `translateX(-${activeSlide * 25}%)` }}
@@ -106,7 +83,7 @@ export default function ServicesSection() {
                   />
                 </div>
                 
-                <h3 className="text-sm font-bold mb-[15px] uppercase tracking-widest lg:text-lg md:text-base">
+                <h3 className="text-sm font-bold mb-[15px] uppercase tracking-widest lg:text-lg md:text-base font-tusker">
                   {service.title}
                 </h3>
                 
@@ -114,7 +91,7 @@ export default function ServicesSection() {
                   {service.description}
                 </p>
                 
-                <button className="bg-white text-[#8E2DE2] border-none px-[14px] py-[10px] rounded-full text-xs font-semibold cursor-pointer self-center mt-auto hover:shadow-lg hover:shadow-white/30 transition-all duration-300">
+                <button className="bg-white text-[#8E2DE2] border-none px-[14px] py-[10px] rounded-full text-xs font-semibold cursor-pointer self-center mt-auto hover:shadow-lg hover:shadow-white/30 transition-all duration-300 font-tusker">
                   Learn More
                 </button>
                 
@@ -130,8 +107,12 @@ export default function ServicesSection() {
           {services.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full border-none cursor-pointer transition-colors duration-300 ${
-                activeSlide === index ? 'bg-[#8E2DE2]' : 'bg-[#d0d0d0]'
+              className={`h-3 rounded-full border-none cursor-pointer transition-colors duration-300 ${
+                index === 0 
+                  ? 'w-8 bg-[#8E2DE2]' 
+                  : activeSlide === index 
+                    ? 'w-3 bg-[#8E2DE2]' 
+                    : 'w-3 bg-[#d0d0d0]'
               }`}
               onClick={() => handleDotClick(index)}
               aria-label={`Go to slide ${index + 1}`}

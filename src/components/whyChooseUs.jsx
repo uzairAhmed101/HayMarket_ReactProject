@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MotionStaggerDiv, MotionFadeInUp } from './AnimationUtils'; // Added AnimationUtils import
-// import waveGradient from '../assets/Images/circular_gradient.png';
+import { MotionStaggerDiv, MotionFadeInUp } from './AnimationUtils';
 
 export default function WhyChooseUs() {
   const cards = [
@@ -28,246 +27,35 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <div className="why-choose-us-section">
-      {/* Decorative element - center left */}
-      <motion.div 
-        className="section5-decoration-element-center-left"
-        initial={{ opacity: 0, x: -150, y: 0 }}
-        animate={{ 
-          opacity: 0.7, 
-          x: 0, 
-          y: 0,
-          transition: { 
-            duration: 1, 
-            ease: "easeOut",
-            delay: 0.3
-          }
-        }}
-        whileInView={{ 
-          x: [0, -10, 0, 10, 0],
-          y: [0, 10, 0, -10, 0],
-          transition: { 
-            duration: 6, 
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          }
-        }}
-        viewport={{ once: true, amount: 0.8 }}
-      >
-        {/* <img src={waveGradient} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> */}
-      </motion.div>
-
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-20 relative">
       {/* Title */}
-      <MotionFadeInUp> {/* Wrapped title with MotionFadeInUp */}
-        <div className="section-title">
-          WHY <span className="purple-text">CHOOSE</span> US
+      <MotionFadeInUp>
+        <div className="text-center mb-20 md:mb-15 sm:mb-12 text-5xl md:text-4xl sm:text-3xl font-bold font-tusker">
+          WHY <span className="text-[#8E2DE2]">CHOOSE</span> US
         </div>
       </MotionFadeInUp>
 
       {/* Cards Container */}
-      <MotionStaggerDiv className="cards-container"> {/* Wrapped cards container with stagger animation */}
+      <MotionStaggerDiv className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7.5 md:gap-6.25 sm:gap-12.5">
         {cards.map((card, index) => (
-          <MotionFadeInUp key={index} className="card-wrapper"> {/* Wrapped each card with fade in animation */}
+          <MotionFadeInUp key={index} className="flex flex-col relative items-center">
             {/* Card Box */}
-            <div className="card-box">
-              <h3 className="card-title">
+            <div className="bg-[#f0f0f0] rounded-[20px] p-3 md:p-[15px] sm:p-2 mb-7.5 md:mb-6 sm:mb-5 flex-grow min-h-[200px] md:min-h-[180px] sm:min-h-[160px] text-center shadow-[1px_1px_5px_gray] relative w-full">
+              <h3 className="font-extrabold text-sm md:text-base sm:text-md mb-2 text-[#8E2DE2] font-tusker">
                 {card.title}
               </h3>
-              <p className="card-description">
+              <p className="text-[0.8rem] font-semibold pb-10">
                 {card.description}
               </p>
             </div>
 
             {/* Number */}
-            <div className="card-number">
+            <div className="text-[5rem] sm:text-[5rem] xs:text-[4rem] font-bold text-[#8E2DE2] text-center absolute bottom-[-33px] md:bottom-[-25px] sm:bottom-[-20px] xs:bottom-[-15px] left-1/2 transform -translate-x-1/2 w-full font-tusker">
               {card.number}
             </div>
           </MotionFadeInUp>
         ))}
       </MotionStaggerDiv>
-
-      <style>{`
-        .why-choose-us-section {
-          min-height: 100vh;
-          background-color: #ffffff;
-          padding: 164px 79px 0px 79px;
-          position: relative;
-        }
-
-        .section5-decoration-element-center-left {
-       position: absolute;
-    /* width: 400px; */
-    height: 80%;
-    top: -192px;
-    left: 0px;
-    transform: translateY(-50%);
-    /* border-radius: 50% 50% 40% 60%; */
-    /* overflow: hidden; */
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.7;
-        }
-
-        .section-title {
-          text-align: center;
-          margin-bottom: 80px;
-          font-size: 48px;
-          font-weight: bold;
-        }
-
-        .purple-text {
-          color: #8E2DE2;
-        }
-
-        .cards-container {
-          max-width: 1400px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 30px;
-        }
-
-        .card-wrapper {
-          display: flex;
-          flex-direction: column;
-          position: relative;
-        }
-
-        .card-box {
-          background-color: #f0f0f0;
-          border-radius: 20px;
-          padding: 24px;
-          margin-bottom: 30px;
-          flex-grow: 1;
-          min-height: 330px;
-          text-align: center;
-          box-shadow: 1px 1px 5px gray;
-          position: relative;
-        }
-
-        .card-title {
-          font-weight: 800;
-          font-size: 16px;
-          margin-bottom: 20px;
-          color: #8E2DE2;
-        }
-
-        .card-description {
-          font-size: 11px;
-          line-height: 1.6;
-          font-weight: 600;
-          margin-bottom: 0;
-        }
-
-        .card-number {
-          font-size: 85px;
-    font-weight: bold;
-    color: #8E2DE2;
-    text-align: center;
-    position: absolute;
-    bottom: -33px;
-    margin-left: 75px;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 1024px) {
-          .section-title {
-            font-size: 40px;
-            margin-bottom: 60px;
-          }
-          
-          .cards-container {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-          }
-
-          .section5-decoration-element-center-left{
-              height: 40%;
-    top: 7%;
-    left: -18px;
-          }
-
-          
-          .card-box {
-            padding: 30px 25px;
-            min-height: 300px;
-          }
-          
-          .card-title {
-            font-size: 20px;
-          }
-          
-          .card-description {
-            font-size: 14px;
-          }
-          
-          .card-number {
-            font-size: 113px;
-        margin-left: 147px;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .why-choose-us-section {
-            padding: 60px 20px;
-          }
-          .section5-decoration-element-center-left{
-          height: 25%;
-        top: -142px;
-        left: -15px;
-          }
-          .section-title {
-            font-size: 32px;
-            margin-bottom: 50px;
-          }
-          
-          .cards-container {
-            grid-template-columns: 1fr;
-            gap: 50px;
-          }
-          
-          .card-box {
-            padding: 25px 20px;
-            min-height: 280px;
-          }
-          
-          .card-title {
-            font-size: 18px;
-          }
-          
-          .card-description {
-            font-size: 13px;
-          }
-          
-          .card-number {
-            font-size: 110px;
-        left: 153px;
-        top: 187px;
-          }
-        }
-
-        @media (max-width: 480px) {
-         .section5-decoration-element-center-left {
-       height: 18%;
-        top: -111px;
-        left: -15px;
-          }
-
-          .card-number{
-          left:0;
-          }
-        }
-
-        /* Media query for screens up to 375px wide */
-        @media (max-width: 375px) {
-          .card-number {
-            left: -30px !important; /* Adjust position for smaller screens */
-          }
-        }
-
-
-      `}</style>
     </div>
   );
 }

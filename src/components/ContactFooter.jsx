@@ -42,7 +42,7 @@ export default function ContactHeaderBar() {
         .contact-footer-header {
           background: #3A0368;
           padding: 15px 20px;
-          font-family: 'Arial', sans-serif;
+          font-family: 'TuskerGrotesk', sans-serif;
           border-top: 1px solid white;
           border-bottom: 1px solid white;
         }

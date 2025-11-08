@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Disclaimer from '../components/Disclaimer.jsx'
 import HeroSection from '../components/BannerSection.jsx'
 import Navbar from '../components/navbar.jsx'
@@ -9,10 +10,10 @@ import OurServices from '../components/ourServices.jsx'
 import NeedAssitance from '../components/needAssitance.jsx'
 import WhyChooseUs from '../components/whyChooseUs.jsx'
 import Section7 from '../components/Section7.jsx'
-import FAQ from '../components/FAQ.jsx'
 import Blogs from '../components/Blogs.jsx'
 import Form from '../components/Form.jsx'
 import ContactFooter from '../components/ContactFooter.jsx'
+import FooterForm from '../components/FooterForm.jsx'
 import Logobar2 from '../components/Logo.jsx'
 import Disclaimer2 from '../components/Disclaimerfooter.jsx'
 
@@ -31,10 +32,10 @@ const HomePage = () => {
         <NeedAssitance />
         <WhyChooseUs />
         <Section7 />
-        <FAQ />
         <Blogs />
         <Form />
         <Logobar2 />
+        <FooterForm />
         <ContactFooter />
         <Disclaimer2 />
       </div>

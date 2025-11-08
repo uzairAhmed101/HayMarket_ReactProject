@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function TopBar() {
   return (
-    <div className="bg-[#35015F] w-full font-sans min-h-[30px] overflow-hidden">
+    <div className="bg-[#35015F] w-full font-tusker min-h-[30px] overflow-hidden">
       <div className="w-full relative">
         <motion.div
           className="whitespace-nowrap inline-block"

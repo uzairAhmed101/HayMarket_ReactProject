@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import headerLogo from '../assets/Images/Header-Logo.png';
 import emailIcon from '../assets/Images/Email-Icon.png';
 import callIcon from '../assets/Images/Call-Icon.png';
@@ -90,9 +91,9 @@ export default function Header() {
           
           {/* CTA Button - Get Started Now */}
           <div className="flex-shrink-0">
-            <button className="bg-[#890BCA] text-white border-none py-3 px-7 rounded-[25px] text-[14px] font-semibold cursor-pointer shadow-[0_4px_12px_rgba(142,45,226,0.3)] inline-block hover:shadow-[0_6px_16px_rgba(142,45,226,0.4)] md:py-[10px] md:px-6 md:text-[13px] xs:py-2 xs:px-5 xs:text-[12px]">
+            <Link to="/services" className="bg-[#890BCA] text-white border-none py-3 px-7 rounded-[25px] text-[14px] font-semibold font-tusker cursor-pointer shadow-[0_4px_12px_rgba(142,45,226,0.3)] inline-block hover:shadow-[0_6px_16px_rgba(142,45,226,0.4)] md:py-[10px] md:px-6 md:text-[13px] xs:py-2 xs:px-5 xs:text-[12px] no-underline">
               Get Started Now
-            </button>
+            </Link>
           </div>
         </div>
       </div>

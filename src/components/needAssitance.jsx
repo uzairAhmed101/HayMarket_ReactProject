@@ -1,41 +1,21 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'; // Restored motion import for other components
 import waveGradient from '../assets/Images/wave_gradient.png';
 import section3Img from '../assets/Images/Section3-img.webp';
 
 export default function AssistanceSection() {
   return (
     <section className="bg-white py-[112px] px-[65px] relative">
-      {/* Decorative element - top right */}
-      <motion.div 
+      <div 
         className="absolute top-[-327px] right-[-81px] pointer-events-none z-[100]"
-        initial={{ opacity: 0, x: 200, y: -100 }}
-        animate={{ 
-          opacity: 1, 
-          x: 0, 
-          y: 0,
-          transition: { duration: 1, ease: "easeOut", delay: 0.3 }
-        }}
-        whileInView={{ 
-          x: [0, -20, 0, 20, 0],
-          y: [0, 20, 0, -20, 0],
-          transition: { 
-            duration: 6,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          }
-        }}
-        viewport={{ once: true, amount: 0.5, margin: "-100px 0px -100px 0px" }}
       >
         <img src={waveGradient} alt="" className="h-[70%] object-cover" />
-      </motion.div>
+      </div>
 
       <div className="max-w-[1400px] mx-auto grid grid-cols-2 gap-[80px] items-center relative z-1">
         
         {/* Left side - Image */}
         <div className="relative flex justify-center items-center">
-
           {/* Purple Circle 1 */}
           <motion.div 
             className="absolute w-[200px] h-[200px] top-[2px] left-[67px] rounded-full bg-gradient-to-br from-[#8E2DE2] to-[#4A00E0] opacity-60 z-1"
@@ -74,7 +54,7 @@ export default function AssistanceSection() {
 
         {/* Right side - Content */}
         <div className="max-w-[600px]">
-          <h2 className="text-[40px] leading-[1.2] font-black mb-[25px]">
+          <h2 className="text-[40px] leading-[1.2] font-black mb-[25px] font-tusker">
             <span className="text-[#8E2DE2]">NEED ASSISTANCE?</span><br />
             <span className="text-black">HERE'S HOW YOU CAN GET OUR HELP</span>
           </h2>
@@ -98,7 +78,7 @@ export default function AssistanceSection() {
               "Upload Your Files",
               "Start your Astonishing Journey"
             ].map((step, i) => (
-              <li key={i} className="text-[14px] text-[#333] pl-[25px] relative leading-[1.6]">
+              <li key={i} className="text-[14px] text-[#333] pl-[25px] relative leading-[1.6] font-tusker">
                 <span className="absolute left-0 top-[-5px] text-[20px] font-bold text-[#8E2DE2]">•</span>
                 {step}
               </li>
@@ -107,12 +87,12 @@ export default function AssistanceSection() {
 
           <div className="flex gap-[15px] flex-wrap">
             {/* Primary Button */}
-            <button className="bg-gradient-to-br from-[#8E2DE2] to-[#4A00E0] text-white border-none py-[14px] px-[32px] rounded-[25px] text-[14px] font-semibold cursor-pointer shadow-[0_4px_12px_rgba(142,45,226,0.3)] hover:shadow-[0_6px_16px_rgba(142,45,226,0.4)] active:scale-95 transition-transform">
+            <button className="bg-gradient-to-br from-[#8E2DE2] to-[#4A00E0] text-white border-none py-[14px] px-[32px] rounded-[25px] text-[14px] font-semibold cursor-pointer shadow-[0_4px_12px_rgba(142,45,226,0.3)] hover:shadow-[0_6px_16px_rgba(142,45,226,0.4)] active:scale-95 transition-transform font-tusker">
               Get In Touch Today
             </button>
 
             {/* Secondary Button */}
-            <button className="bg-white text-[#8E2DE2] border-2 border-[#8E2DE2] py-[12px] px-[28px] rounded-[25px] text-[14px] font-semibold cursor-pointer hover:bg-[#8E2DE2] hover:text-white transition-colors">
+            <button className="bg-white text-[#8E2DE2] border-2 border-[#8E2DE2] py-[12px] px-[28px] rounded-[25px] text-[14px] font-semibold cursor-pointer hover:bg-[#8E2DE2] hover:text-white transition-colors font-tusker">
               Email To Us
             </button>
           </div>

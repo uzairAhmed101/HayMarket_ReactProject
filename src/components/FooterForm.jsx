@@ -50,34 +50,38 @@ export default function WritingServiceLanding() {
   ];
 
   return (
-    <div className="footer-form-landing-container">
-      <div className="footer-form-content-wrapper">
-        {/* Left Section */}
-        <div className="footer-form-left-section">
-          <h1 className="footer-form-main-heading">
+    <div className="border-t border-white min-h-screen bg-[#3A0368] p-5 font-tusker">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-2 gap-10 items-start lg:gap-10 md:grid-cols-2 sm:grid-cols-1">
+        {/* Left Section - Content */}
+        <div className="text-white py-5">
+          <h1 className="text-3xl font-bold mb-5 leading-tight uppercase md:text-4xl">
             WRITING MADE EASY WITHOUT SACRIFICING QUALITY!
           </h1>
           
-          <p className="footer-form-description">
+          <p className="text-base leading-relaxed mb-8 opacity-95 md:text-sm">
             eBook Authors offers affordable, professional writing, editing, and proofreading services customized to your 
             needs. We also help promote your work across multiple platforms using expert strategies and advanced tools. 
             With our 24/7 live content solutions, we're your go-to destination for success.
           </p>
 
-          <div className="footer-form-services-grid">
+          <div className="grid grid-cols-2 gap-4 md:gap-4">
             {services.map((service, index) => (
-              <div key={index} className="footer-form-service-item">
-                <div className="footer-form-check-icon"></div>
+              <div key={index} className="flex items-center gap-3 text-sm md:text-sm">
+                <div className="text-white flex-shrink-0 bg-[#8B0CCC] rounded-full p-0.5 w-4 h-4 flex items-center justify-center">
+                  <span className="text-xs font-bold">✓</span>
+                </div>
                 <span>{service}</span>
               </div>
             ))}
           </div>
 
-          <div className="footer-form-quick-links-section-left">
-            <h3 className="footer-form-quick-links-title">Quick Links</h3>
-            <div className="footer-form-quick-links-grid">
+          <div className="mt-8 md:mt-8">
+            <h3 className="text-2xl font-bold mb-4 md:text-2xl">
+              Quick Links
+            </h3>
+            <div className="grid grid-cols-2 gap-3 md:gap-3">
               {quickLinks.map((link, index) => (
-                <a key={index} href="#" className="footer-form-quick-link">
+                <a key={index} href="#" className="text-white text-sm opacity-90 transition-opacity duration-300 hover:opacity-100 hover:underline">
                   {link}
                 </a>
               ))}
@@ -86,9 +90,11 @@ export default function WritingServiceLanding() {
         </div>
 
         {/* Right Section - Form */}
-        <div className="footer-form-right-section">
-          <div className="footer-form-form-container">
-            <h2 className="footer-form-form-title">TALK TO WRITING EXPERT</h2>
+        <div className="sticky top-5">
+          <div className="backdrop-blur-lg rounded-xl p-[90px] md:p-5">
+            <h2 className="text-white text-2xl font-bold mb-6 text-center md:text-xl">
+              TALK TO WRITING EXPERT
+            </h2>
             
             <div>
               <input
@@ -97,7 +103,7 @@ export default function WritingServiceLanding() {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="footer-form-form-input"
+                className="w-full p-4 text-white mb-4 border-none rounded-full bg-[#8B0CCC] text-base"
               />
               
               <input
@@ -106,7 +112,7 @@ export default function WritingServiceLanding() {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="footer-form-form-input"
+                className="w-full p-4 text-white mb-4 border-none rounded-full bg-[#8B0CCC] text-base"
               />
               
               <input
@@ -115,7 +121,7 @@ export default function WritingServiceLanding() {
                 placeholder="Your Phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="footer-form-form-input"
+                className="w-full p-4 text-white mb-4 border-none rounded-full bg-[#8B0CCC] text-base"
               />
               
               <textarea
@@ -123,16 +129,16 @@ export default function WritingServiceLanding() {
                 placeholder="Enter Brief"
                 value={formData.brief}
                 onChange={handleChange}
-                className="footer-form-form-textarea"
+                className="w-full p-5 text-white mb-4 border-none rounded-2xl bg-[#8B0CCC] text-base resize-y min-h-[100px]"
                 rows="4"
               ></textarea>
               
-              <button onClick={handleSubmit} className="footer-form-submit-button">
+              <button onClick={handleSubmit} className="w-full p-4 bg-[#8B0CCC] text-white border-none rounded-full text-lg font-bold cursor-pointer transition-transform duration-200 hover:-translate-y-0.5 mx-auto block">
                 SUBMIT
               </button>
             </div>
 
-            <p className="footer-form-disclaimer">
+            <p className="text-white text-xs leading-relaxed mt-5 opacity-80 text-center md:text-xs">
               By clicking the "Submit" button, you are agreeing to the eBook Authors terms 
               and conditions and privacy policy. Rest assured, we will never share your 
               personal information with third parties unless absolutely necessary for 
@@ -145,183 +151,6 @@ export default function WritingServiceLanding() {
       </div>
 
       <style>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-
-        .footer-form-landing-container {
-        border-top: 1px solid white;
-          min-height: 100vh;
-          background: #3A0368;
-          padding: 20px;
-          font-family: 'Arial', sans-serif;
-        }
-
-        .footer-form-content-wrapper {
-          max-width: 1400px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
-          align-items: start;
-        }
-
-        .footer-form-left-section {
-          color: white;
-          padding: 20px 0;
-        }
-
-        .footer-form-main-heading {
-          font-size: 1.8rem;
-          font-weight: bold;
-          margin-bottom: 20px;
-          line-height: 1.2;
-          text-transform: uppercase;
-        }
-
-        .footer-form-description {
-          font-size: 0.95rem;
-          line-height: 1.6;
-          margin-bottom: 30px;
-          opacity: 0.95;
-        }
-
-        .footer-form-services-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 15px;
-        }
-
-        .footer-form-service-item {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          font-size: 0.9rem;
-        }
-
-        .footer-form-check-icon {
-          color: white;
-          flex-shrink: 0;
-          background: #8B0CCC;
-          border-radius: 50%;
-          padding: 2px;
-          width: 16px;
-          height: 16px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .footer-form-check-icon::before {
-          content: '✓';
-          font-size: 12px;
-          font-weight: bold;
-        }
-
-        .footer-form-quick-links-section-left {
-          margin-top: 30px;
-        }
-
-        .footer-form-quick-links-title {
-          font-size: 1.3rem;
-          margin-bottom: 15px;
-          font-weight: bold;
-        }
-
-        .footer-form-quick-links-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
-        }
-
-        .footer-form-quick-link {
-          color: white;
-          text-decoration: none;
-          font-size: 0.9rem;
-          opacity: 0.9;
-          transition: opacity 0.3s;
-        }
-
-        .footer-form-quick-link:hover {
-          opacity: 1;
-          text-decoration: underline;
-        }
-
-        .footer-form-right-section {
-          position: sticky;
-          top: 20px;
-        }
-
-        .footer-form-form-container {
-        
-          backdrop-filter: blur(10px);
-          border-radius: 15px;
-          padding: 90px;
-         
-        }
-
-        .footer-form-form-title {
-          color: white;
-          font-size: 1.5rem;
-          margin-bottom: 25px;
-          text-align: center;
-          font-weight: bold;
-        }
-
-        .footer-form-form-input,
-        .footer-form-form-textarea {
-          width: 100%;
-          padding: 15px;
-          color: white;
-          margin-bottom: 15px;
-          border: none;
-          border-radius: 50px;
-          background: #8B0CCC;
-          font-size: 0.95rem;
-          font-family: inherit;
-        }
-
-        .footer-form-form-input::placeholder,
-        .footer-form-form-textarea::placeholder {
-          color: white;
-        }
-
-        .footer-form-form-textarea {
-          resize: vertical;
-          min-height: 100px;
-          padding: 20px;
-        }
-
-        .footer-form-submit-button {
-          width: 100%;
-          padding: 15px;
-          background: #8B0CCC;
-          color: white;
-          border: none;
-          border-radius: 50px;
-          font-size: 1rem;
-          font-weight: bold;
-          cursor: pointer;
-          transition: transform 0.2s;
-          margin: 0 auto;
-          display: block;
-        }
-
-        .footer-form-submit-button:hover {
-          transform: translateY(-2px);
-        }
-
-        .footer-form-disclaimer {
-          color: white;
-          font-size: 0.7rem;
-          line-height: 1.5;
-          margin-top: 20px;
-          opacity: 0.8;
-          text-align: center;
-        }
-
         /* Tablet Styles */
         @media (max-width: 1024px) {
           .footer-form-content-wrapper {

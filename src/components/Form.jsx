@@ -1,429 +1,6 @@
 import React, { useState } from 'react';
 import formBg from '../assets/Images/Form-bg.webp';
 
-const style = `
-  .manuscript-cta-container {
-    width: 100vw;
-    max-width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    padding: 0;
-    position: relative;
-  }
-
-  .manuscript-cta-section {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 70px 40px;
-    position: relative;
-    overflow: hidden;
-    min-height: 550px;
-    display: flex;
-    align-items: center;
-    margin-top: 60px;
-  }
-
-  .manuscript-decorative-pen {
-    position: absolute;
-    opacity: 0.1;
-    z-index: 0;
-    right: 80px;
-    bottom: 50px;
-    width: 200px;
-    height: 500px;
-    transform: rotate(-20deg);
-  }
-
-  .manuscript-content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    max-width: 1300px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    width: 100%;
-  }
-
-  .manuscript-left-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .manuscript-main-title {
-    font-size: 29px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .manuscript-description-text {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 35px;
-    line-height: 1.7;
-  }
-
-  .manuscript-features-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-bottom: 40px;
-  }
-
-  .manuscript-feature-item {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-  }
-
-  .manuscript-feature-icon {
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    background: white;
-    color: #6b1b9a;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 3px;
-  }
-
-  .manuscript-feature-text {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.5;
-  }
-
-  .manuscript-bottom-section {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-  }
-
-  .manuscript-help-text {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
-  }
-
-  .manuscript-btn-started {
-    background: linear-gradient(135deg, #a020f0 0%, #c020f0 100%);
-    color: white;
-    border: none;
-    padding: 11px 24px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(160, 32, 240, 0.4);
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .manuscript-btn-started:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(160, 32, 240, 0.5);
-  }
-
-  .manuscript-right-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .manuscript-form-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-align: center;
-  }
-
-  .manuscript-form-subtitle {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 25px;
-    text-align: center;
-  }
-
-  .manuscript-form-group {
-    margin-bottom: 18px;
-  }
-
-  .manuscript-form-input {
-    width: 100%;
-    padding: 11px 14px;
-    border: none;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.15);
-    font-size: 13px;
-    color: white;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .manuscript-form-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-  }
-
-  .manuscript-form-input:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
-    border-color: #a020f0;
-  }
-
-  .manuscript-form-textarea {
-    width: 100%;
-    padding: 11px 14px;
-    border: none;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.15);
-    font-size: 13px;
-    color: white;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    min-height: 100px;
-    resize: vertical;
-  }
-
-  .manuscript-form-textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-  }
-
-  .manuscript-form-textarea:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
-    border-color: #a020f0;
-  }
-
-  .manuscript-form-submit {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(135deg, #a020f0 0%, #c020f0 100%);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(160, 32, 240, 0.3);
-  }
-
-  .manuscript-form-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(160, 32, 240, 0.4);
-  }
-
-  .manuscript-success-message {
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(0, 255, 0, 0.1);
-    border-radius: 6px;
-    color: #00ff00;
-    text-align: center;
-    font-weight: 500;
-  }
-
-  @media (max-width: 1024px) {
-    .manuscript-cta-section {
-      padding: 60px 30px;
-      min-height: 500px;
-    }
-
-    .manuscript-content-wrapper {
-      gap: 50px;
-    }
-
-    .manuscript-main-title {
-      font-size: 26px;
-    }
-
-    .manuscript-description-text {
-      font-size: 13px;
-      margin-bottom: 30px;
-    }
-
-    .manuscript-features-wrapper {
-      margin-bottom: 30px;
-    }
-
-    .manuscript-feature-text {
-      font-size: 12px;
-    }
-
-    .manuscript-form-title {
-      font-size: 16px;
-    }
-
-    .manuscript-form-subtitle {
-      font-size: 12px;
-    }
-
-    .manuscript-form-input,
-    .manuscript-form-textarea {
-      font-size: 12px;
-      padding: 10px 12px;
-    }
-
-    .manuscript-form-submit {
-      font-size: 13px;
-      padding: 11px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .manuscript-cta-section {
-      padding: 50px 20px;
-      min-height: auto;
-      margin-top: 40px;
-    }
-
-    .manuscript-content-wrapper {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    .manuscript-left-content,
-    .manuscript-right-content {
-      text-align: center;
-    }
-
-    .manuscript-main-title {
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
-
-    .manuscript-description-text {
-      font-size: 12px;
-      margin-bottom: 25px;
-    }
-
-    .manuscript-features-wrapper {
-      grid-template-columns: 1fr;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    .manuscript-bottom-section {
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .manuscript-help-text {
-      font-size: 12px;
-    }
-
-    .manuscript-btn-started {
-      font-size: 12px;
-      padding: 10px 20px;
-    }
-
-    .manuscript-form-title {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-
-    .manuscript-form-subtitle {
-      font-size: 11px;
-      margin-bottom: 20px;
-    }
-
-    .manuscript-form-group {
-      margin-bottom: 15px;
-    }
-
-    .manuscript-decorative-pen {
-      width: 150px;
-      height: 400px;
-      right: 30px;
-      bottom: 30px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .manuscript-cta-section {
-      padding: 40px 15px;
-      margin-top: 30px;
-    }
-
-    .manuscript-main-title {
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
-
-    .manuscript-description-text {
-      font-size: 11px;
-      margin-bottom: 20px;
-    }
-
-    .manuscript-features-wrapper {
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .manuscript-feature-item {
-      gap: 10px;
-    }
-
-    .manuscript-feature-icon {
-      width: 16px;
-      height: 16px;
-      min-width: 16px;
-      font-size: 10px;
-    }
-
-    .manuscript-feature-text {
-      font-size: 11px;
-    }
-
-    .manuscript-help-text {
-      font-size: 11px;
-    }
-
-    .manuscript-btn-started {
-      font-size: 11px;
-      padding: 9px 18px;
-    }
-
-    .manuscript-form-title {
-      font-size: 14px;
-    }
-
-    .manuscript-form-subtitle {
-      font-size: 10px;
-    }
-
-    .manuscript-form-input,
-    .manuscript-form-textarea {
-      font-size: 11px;
-      padding: 9px 10px;
-    }
-
-    .manuscript-form-submit {
-      font-size: 12px;
-      padding: 10px;
-    }
-
-    .manuscript-decorative-pen {
-      display: none;
-    }
-  }
-`;
-
 export default function ManuscriptCTASection() {
   const [formData, setFormData] = useState({
     name: '',
@@ -431,7 +8,6 @@ export default function ManuscriptCTASection() {
     phone: '',
     description: ''
   });
-
   const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = (e) => {
@@ -462,109 +38,140 @@ export default function ManuscriptCTASection() {
 
   return (
     <>
-      <style>{style}</style>
-      <div className="manuscript-cta-container">
+      <div className="w-screen max-w-screen mx-[-50vw] ml-[calc(-50vw+50%)] mr-[calc(-50vw+50%)] px-0 relative">
         <div 
-          className="manuscript-cta-section"
+          className="bg-cover bg-center bg-no-repeat py-[70px] px-10 relative overflow-hidden min-h-[550px] flex items-center mt-[60px] font-tusker md:py-[50px] md:px-5 md:min-h-auto md:mt-10 sm:py-[40px] sm:px-[30px] sm:mt-[40px] xs:py-[40px] xs:px-[15px] xs:mt-[30px]"
           style={{ backgroundImage: `url(${formBg})` }}
         >
-          <div className="manuscript-content-wrapper">
-            <div className="manuscript-left-content">
-              <h1 className="manuscript-main-title">
+          {/* Ensuring the form is on the right with explicit grid positioning */}
+          <div className="grid grid-cols-2 gap-20 max-w-[1400px] mx-auto relative z-1 w-full lg:gap-[50px] md:grid-cols-1 md:gap-10 sm:gap-[40px]">
+            {/* Left Section - Content */}
+            <div className="flex flex-col justify-center md:text-center">
+              <h1 className="text-[29px] font-bold text-white mb-5 leading-tight uppercase tracking-[1px] font-tusker md:text-[24px] md:mb-[15px] sm:text-[24px] sm:mb-[15px] xs:text-[20px] xs:mb-3">
                 GET YOUR MANUSCRIPT PUBLISHED WITH US
               </h1>
-              <p className="manuscript-description-text">
+              <p className="text-sm text-[rgba(255,255,255,0.85)] mb-[35px] md:text-[12px] md:mb-[25px] sm:text-[12px] sm:mb-[25px] xs:text-[11px] xs:mb-5">
                 Transform your manuscript into a professionally published book with our comprehensive publishing services. 
                 Our expert team will guide you through every step of the process, from editing to distribution.
               </p>
               
-              <div className="manuscript-features-wrapper">
-                <div className="manuscript-feature-item">
-                  <div className="manuscript-feature-icon">✓</div>
-                  <div className="manuscript-feature-text">Professional Editing & Proofreading</div>
+              <div className="grid grid-cols-2 gap-0.5 mb-10 md:grid-cols-1 md:gap-[15px] md:mb-[25px] sm:grid-cols-1 sm:gap-[15px] sm:mb-[25px] xs:gap-3 xs:mb-5">
+                <div className="flex gap-3 items-start md:gap-2.5 sm:gap-2.5 xs:gap-2.5">
+                  <div className="w-[18px] h-[18px] min-w-[18px] bg-white text-[#6b1b9a] rounded-full flex items-center justify-center text-xs font-bold mt-1 md:w-4 md:h-4 md:min-w-4 md:text-[10px] sm:w-4 sm:h-4 sm:min-w-4 sm:text-[10px] xs:w-4 xs:h-4 xs:min-w-4 xs:text-[10px]">
+                    ✓
+                  </div>
+                  <div className="text-[13px] text-[rgba(255,255,255,0.9)] md:text-[12px] sm:text-[12px] xs:text-[11px]">
+                    Professional Editing & Proofreading
+                  </div>
                 </div>
-                <div className="manuscript-feature-item">
-                  <div className="manuscript-feature-icon">✓</div>
-                  <div className="manuscript-feature-text">Custom Book Design & Layout</div>
+                <div className="flex gap-3 items-start md:gap-2.5 sm:gap-2.5 xs:gap-2.5">
+                  <div className="w-[18px] h-[18px] min-w-[18px] bg-white text-[#6b1b9a] rounded-full flex items-center justify-center text-xs font-bold mt-1 md:w-4 md:h-4 md:min-w-4 md:text-[10px] sm:w-4 sm:h-4 sm:min-w-4 sm:text-[10px] xs:w-4 xs:h-4 xs:min-w-4 xs:text-[10px]">
+                    ✓
+                  </div>
+                  <div className="text-[13px] text-[rgba(255,255,255,0.9)] md:text-[12px] sm:text-[12px] xs:text-[11px]">
+                    Custom Book Design & Layout
+                  </div>
                 </div>
-                <div className="manuscript-feature-item">
-                  <div className="manuscript-feature-icon">✓</div>
-                  <div className="manuscript-feature-text">Global Distribution Channels</div>
+                <div className="flex gap-3 items-start md:gap-2.5 sm:gap-2.5 xs:gap-2.5">
+                  <div className="w-[18px] h-[18px] min-w-[18px] bg-white text-[#6b1b9a] rounded-full flex items-center justify-center text-xs font-bold mt-1 md:w-4 md:h-4 md:min-w-4 md:text-[10px] sm:w-4 sm:h-4 sm:min-w-4 sm:text-[10px] xs:w-4 xs:h-4 xs:min-w-4 xs:text-[10px]">
+                    ✓
+                  </div>
+                  <div className="text-[13px] text-[rgba(255,255,255,0.9)] md:text-[12px] sm:text-[12px] xs:text-[11px]">
+                    Global Distribution Channels
+                  </div>
                 </div>
-                <div className="manuscript-feature-item">
-                  <div className="manuscript-feature-icon">✓</div>
-                  <div className="manuscript-feature-text">Marketing & Promotion Support</div>
+                <div className="flex gap-3 items-start md:gap-2.5 sm:gap-2.5 xs:gap-2.5">
+                  <div className="w-[18px] h-[18px] min-w-[18px] bg-white text-[#6b1b9a] rounded-full flex items-center justify-center text-xs font-bold mt-1 md:w-4 md:h-4 md:min-w-4 md:text-[10px] sm:w-4 sm:h-4 sm:min-w-4 sm:text-[10px] xs:w-4 xs:h-4 xs:min-w-4 xs:text-[10px]">
+                    ✓
+                  </div>
+                  <div className="text-[13px] text-[rgba(255,255,255,0.9)] md:text-[12px] sm:text-[12px] xs:text-[11px]">
+                    Marketing & Promotion Support
+                  </div>
                 </div>
               </div>
               
-              <div className="manuscript-bottom-section">
-                <span className="manuscript-help-text">Need help with your publishing journey?</span>
-                <button className="manuscript-btn-started">
+              <div className="flex gap-[15px] items-center md:flex-col md:gap-[10px] sm:flex-col sm:gap-[10px] xs:flex-col xs:gap-[10px]">
+                <span className="text-[13px] text-[rgba(255,255,255,0.8)] font-medium md:text-[12px] sm:text-[12px] xs:text-[11px]">
+                  Need help with your publishing journey?
+                </span>
+                <button className="bg-gradient-to-br from-[#a020f0] to-[#c020f0] text-white border-none py-[11px] px-6 rounded-[20px] text-[13px] font-semibold cursor-pointer transition-all duration-300 ease-in-out shadow-[0_5px_20px_rgba(160,32,240,0.4)] flex gap-2 items-center font-tusker hover:translate-y-[-2px] hover:shadow-[0_8px_25px_rgba(160,32,240,0.5)] md:text-[12px] md:py-[10px] md:px-5 sm:text-[12px] sm:py-[10px] sm:px-5 xs:text-[11px] xs:py-[9px] xs:px-[18px]">
                   <span>Chat With Us</span>
                   <span>💬</span>
                 </button>
               </div>
             </div>
             
-            <div className="manuscript-right-content">
-              <h2 className="manuscript-form-title">SUBMIT YOUR MANUSCRIPT</h2>
-              <p className="manuscript-form-subtitle">Fill out the form below and our experts will contact you shortly</p>
+            
+            
+            <div className="flex flex-col justify-center md:text-center">
+              <h2 className="text-[18px] font-bold text-white mb-2 uppercase tracking-[0.5px] text-center font-tusker md:text-[15px] md:mb-1.5 sm:text-[15px] sm:mb-1.5 xs:text-[14px]">
+                SUBMIT YOUR MANUSCRIPT
+              </h2>
+              <p className="text-[13px] text-[rgba(255,255,255,0.7)] mb-[25px] text-center md:text-[11px] md:mb-5 sm:text-[11px] sm:mb-5 xs:text-[10px] xs:mb-5">
+                Fill out the form below and our experts will contact you shortly
+              </p>
               
-              <div className="manuscript-form-wrapper">
-                <div className="manuscript-form-group">
+              <div className="bg-transparent backdrop-blur-sm border border-[rgba(255,255,255,0.3)] rounded-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(255,255,255,0.1)] relative overflow-hidden p-[30px] md:p-[30px] sm:p-5 xs:p-5">
+                <div className="mb-[18px] md:mb-[15px] sm:mb-[15px] xs:mb-[15px]">
                   <input
                     type="text"
                     name="name"
-                    className="manuscript-form-input"
+                    className="w-full p-[11px_14px] border-none rounded-lg bg-[rgba(255,255,255,0.15)] text-[13px] text-white transition-all duration-300 border border-[rgba(255,255,255,0.2)] font-tusker focus:outline-none focus:bg-[rgba(255,255,255,0.2)] focus:border-[#a020f0] md:text-[12px] md:p-[10px_12px] sm:text-[12px] sm:p-[10px_12px] xs:text-[11px] xs:p-[9px_10px]"
                     placeholder="Full Name"
                     value={formData.name}
                     onChange={handleInputChange}
                   />
                 </div>
                 
-                <div className="manuscript-form-group">
+                <div className="mb-[18px] md:mb-[15px] sm:mb-[15px] xs:mb-[15px]">
                   <input
                     type="email"
                     name="email"
-                    className="manuscript-form-input"
+                    className="w-full p-[11px_14px] border-none rounded-lg bg-[rgba(255,255,255,0.15)] text-[13px] text-white transition-all duration-300 border border-[rgba(255,255,255,0.2)] font-tusker focus:outline-none focus:bg-[rgba(255,255,255,0.2)] focus:border-[#a020f0] md:text-[12px] md:p-[10px_12px] sm:text-[12px] sm:p-[10px_12px] xs:text-[11px] xs:p-[9px_10px]"
                     placeholder="Email Address"
                     value={formData.email}
                     onChange={handleInputChange}
                   />
                 </div>
                 
-                <div className="manuscript-form-group">
+                <div className="mb-[18px] md:mb-[15px] sm:mb-[15px] xs:mb-[15px]">
                   <input
                     type="tel"
                     name="phone"
-                    className="manuscript-form-input"
+                    className="w-full p-[11px_14px] border-none rounded-lg bg-[rgba(255,255,255,0.15)] text-[13px] text-white transition-all duration-300 border border-[rgba(255,255,255,0.2)] font-tusker focus:outline-none focus:bg-[rgba(255,255,255,0.2)] focus:border-[#a020f0] md:text-[12px] md:p-[10px_12px] sm:text-[12px] sm:p-[10px_12px] xs:text-[11px] xs:p-[9px_10px]"
                     placeholder="Phone Number"
                     value={formData.phone}
                     onChange={handleInputChange}
                   />
                 </div>
                 
-                <div className="manuscript-form-group">
+                <div className="mb-[18px] md:mb-[15px] sm:mb-[15px] xs:mb-[15px]">
                   <textarea
                     name="description"
-                    className="manuscript-form-textarea"
+                    className="w-full p-[11px_14px] border-none rounded-lg bg-[rgba(255,255,255,0.15)] text-[13px] text-white transition-all duration-300 border border-[rgba(255,255,255,0.2)] min-h-[100px] resize-y font-tusker focus:outline-none focus:bg-[rgba(255,255,255,0.2)] focus:border-[#a020f0] md:text-[12px] md:p-[10px_12px] sm:text-[12px] sm:p-[10px_12px] xs:text-[11px] xs:p-[9px_10px]"
                     placeholder="Enter a brief description about your book and publishing goals"
                     value={formData.description}
                     onChange={handleInputChange}
                   ></textarea>
                 </div>
                 
-                <button className="manuscript-form-submit" onClick={handleSubmit}>
+                <button 
+                  className="w-full p-3 bg-gradient-to-br from-[#a020f0] to-[#c020f0] text-white border-none rounded-lg text-[14px] font-semibold cursor-pointer transition-all duration-300 ease-in-out shadow-[0_5px_15px_rgba(160,32,240,0.3)] font-tusker hover:translate-y-[-2px] hover:shadow-[0_8px_20px_rgba(160,32,240,0.4)] md:text-[13px] md:p-[11px] sm:text-[13px] sm:p-[11px] xs:text-[12px] xs:p-[10px]"
+                  onClick={handleSubmit}
+                >
                   Submit
                 </button>
                 
                 {submitted && (
-                  <div className="manuscript-success-message">
+                  <div className="mt-5 p-[15px] bg-[rgba(0,255,0,0.1)] rounded-lg text-[#00ff00] text-center font-medium">
                     Thank you! We will contact you soon.
                   </div>
                 )}
               </div>
             </div>
+          </div>
+          
+          <div className="absolute opacity-10 z-0 right-20 bottom-[50px] w-[200px] h-[500px] rotate-[-20deg] md:right-[30px] md:bottom-[30px] md:w-[150px] md:h-[400px] sm:right-[30px] sm:bottom-[30px] sm:w-[150px] sm:h-[400px] xs:hidden">
           </div>
         </div>
       </div>

@@ -8,42 +8,79 @@ import logoBar25 from '../assets/Images/LogoBar-2-5.png';
 export default function Logobar2() {
   return (
     <>
+      <div className="border-t border-white bg-[#3A0368] py-4 px-8 flex items-center justify-between gap-4 flex-wrap md:px-4 md:justify-center sm:gap-3">
+        {/* Left Section - Logo */}
+        <div className="flex items-center gap-4">
+          <img 
+            src={logoBar21} 
+            alt="Logo" 
+            className="logo-bar-2-logo-image"
+            style={{
+              height: '3.5rem',
+              width: 'auto',
+              padding: '0.5rem'
+            }}
+          />
+        </div>
+
+        {/* Center Section - Badges */}
+        <div className="flex items-center gap-[3.75rem] flex-wrap justify-center">
+          <div className="logo-bar-2-divider"></div>
+
+          <img 
+            src={logoBar22} 
+            alt="Logo 2" 
+            className="logo-bar-2-logo-image"
+            style={{
+              height: '2.5rem',
+              width: 'auto',
+              padding: '0.3rem'
+            }}
+          />
+          <img 
+            src={logoBar23} 
+            alt="Logo 3" 
+            className="logo-bar-2-logo-image"
+            style={{
+              height: '2.5rem',
+              width: 'auto',
+              padding: '0.3rem'
+            }}
+          />
+          <img 
+            src={logoBar24} 
+            alt="Logo 4" 
+            className="logo-bar-2-logo-image"
+            style={{
+              height: '2.5rem',
+              width: 'auto',
+              padding: '0.3rem'
+            }}
+          />
+          <img 
+            src={logoBar25} 
+            alt="Logo 5" 
+            className="logo-bar-2-logo-image"
+            style={{
+              height: '2.5rem',
+              width: 'auto',
+              padding: '0.3rem'
+            }}
+          />
+        </div>
+
+        {/* Right Section - Trust Badges */}
+        <div className="flex items-center gap-3">
+          <div className="logo-bar-2-trustpilot-badge">
+          </div>
+        </div>
+      </div>
+
       <style>{`
-        .logo-bar-2-badge-bar {
-        border-top: 1px solid white;
-          background: #3A0368;
-          padding: 1rem 2rem;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 1rem;
-          flex-wrap: wrap;
-        }
-
-        .logo-bar-2-left-section {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-        }
-
-        .logo-bar-2-center-section {
-          display: flex;
-          align-items: center;
-          gap: 3.75rem;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
         .logo-bar-2-badge-group {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-        }
-
-        .logo-bar-2-right-section {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
         }
 
         .logo-bar-2-trustpilot-logo {
@@ -147,75 +184,6 @@ export default function Logobar2() {
           }
         }
       `}</style>
-
-      <div className="logo-bar-2-badge-bar">
-        {/* Left Section - Logo */}
-        <div className="logo-bar-2-left-section">
-          <img 
-            src={logoBar21} 
-            alt="Logo" 
-            className="logo-bar-2-logo-image"
-            style={{
-              height: '3.5rem',
-              width: 'auto',
-              padding: '0.5rem'
-            }}
-          />
-        </div>
-
-        {/* Center Section - Badges */}
-        <div className="logo-bar-2-center-section">
-          <div className="logo-bar-2-divider"></div>
-
-          <img 
-            src={logoBar22} 
-            alt="Logo 2" 
-            className="logo-bar-2-logo-image"
-            style={{
-              height: '2.5rem',
-              width: 'auto',
-              padding: '0.3rem'
-            }}
-          />
-          <img 
-            src={logoBar23} 
-            alt="Logo 3" 
-            className="logo-bar-2-logo-image"
-            style={{
-              height: '2.5rem',
-              width: 'auto',
-              padding: '0.3rem'
-            }}
-          />
-          <img 
-            src={logoBar24} 
-            alt="Logo 4" 
-            className="logo-bar-2-logo-image"
-            style={{
-              height: '2.5rem',
-              width: 'auto',
-              padding: '0.3rem'
-            }}
-          />
-          <img 
-            src={logoBar25} 
-            alt="Logo 5" 
-            className="logo-bar-2-logo-image"
-            style={{
-              height: '2.5rem',
-              width: 'auto',
-              padding: '0.3rem'
-            }}
-          />
-
-          {/* Right Section - Trust Badges */}
-          <div className="logo-bar-2-right-section">
-            <div className="logo-bar-2-trustpilot-badge">
-            </div>
-
-          </div>
-        </div>
-      </div>
     </>
   );
 }
