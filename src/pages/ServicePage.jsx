@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Disclaimer from '../components/Disclaimer.jsx'
+// import Disclaimer from '../components/Disclaimer.jsx'
 import HeroSection from '../components/BannerSection.jsx'
 import Navbar from '../components/navbar.jsx'
 import Header from '../components/Header.jsx'
@@ -26,7 +26,6 @@ const ServicePage = () => {
   
   return (
     <div>
-        <Disclaimer />
         <Header />
         <Navbar />
         <HeroSection />

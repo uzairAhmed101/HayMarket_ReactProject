@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Disclaimer from '../components/Disclaimer.jsx'
+// import Disclaimer from '../components/Disclaimer.jsx'/
 import HeroSection from '../components/BannerSection.jsx'
 import Navbar from '../components/navbar.jsx'
 import Header from '../components/Header.jsx'
@@ -22,7 +22,6 @@ import Disclaimer2 from '../components/Disclaimerfooter.jsx'
 const HomePage = () => {
     return (
       <div>
-        <Disclaimer />
         <Header />
         <Navbar />
         <HeroSection />
