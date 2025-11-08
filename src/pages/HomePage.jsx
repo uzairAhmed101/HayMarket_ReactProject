@@ -22,7 +22,7 @@ import Disclaimer2 from '../components/Disclaimerfooter.jsx'
 const HomePage = () => {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <Navbar />
         <HeroSection />
         <LogoBar />
