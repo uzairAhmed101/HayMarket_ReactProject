@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function WritingServiceLanding() {
   const [formData, setFormData] = useState({
@@ -50,181 +51,205 @@ export default function WritingServiceLanding() {
   ];
 
   return (
-    <div className="border-t border-white min-h-screen bg-[#3A0368] p-5 font-tusker">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-2 gap-10 items-start lg:gap-10 md:grid-cols-2 sm:grid-cols-1">
+    <div className="border-t border-white min-h-screen bg-[#3A0368] p-2 sm:p-3 md:p-4 lg:p-5 xl:p-6 font-tusker">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 items-start">
         {/* Left Section - Content */}
-        <div className="text-white py-5">
-          <h1 className="text-3xl font-bold mb-5 leading-tight uppercase md:text-4xl">
+        <motion.div 
+          className="text-white py-1 sm:py-2 md:py-3 lg:py-4"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.h1 
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3 md:mb-4 leading-tight uppercase"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             WRITING MADE EASY WITHOUT SACRIFICING QUALITY!
-          </h1>
+          </motion.h1>
           
-          <p className="text-base leading-relaxed mb-8 opacity-95 md:text-sm">
+          <motion.p 
+            className="text-xs sm:text-sm mb-3 sm:mb-4 md:mb-5 opacity-95"
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             eBook Authors offers affordable, professional writing, editing, and proofreading services customized to your 
             needs. We also help promote your work across multiple platforms using expert strategies and advanced tools. 
             With our 24/7 live content solutions, we're your go-to destination for success.
-          </p>
+          </motion.p>
 
-          <div className="grid grid-cols-2 gap-4 md:gap-4">
-            {services.map((service, index) => (
-              <div key={index} className="flex items-center gap-3 text-sm md:text-sm">
-                <div className="text-white flex-shrink-0 bg-[#8B0CCC] rounded-full p-0.5 w-4 h-4 flex items-center justify-center">
-                  <span className="text-xs font-bold">✓</span>
-                </div>
-                <span>{service}</span>
+          {/* Services and Quick Links Side by Side */}
+          <motion.div 
+            className="flex flex-col lg:flex-row mt-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            {/* Services Column */}
+            <motion.div 
+              className="lg:flex-1"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white">Our Services</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {services.map((service, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="flex items-center gap-2 p-1.5 hover:bg-[#8B0CCC] rounded-lg transition-colors duration-300"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.05 * index + 0.6 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                  >
+                    <div className="text-white flex-shrink-0 bg-[#8B0CCC] rounded-full p-0.5 w-4 h-4 flex items-center justify-center">
+                      <span className="text-[8px] font-bold">✓</span>
+                    </div>
+                    <span className="text-white text-xs">{service}</span>
+                  </motion.div>
+                ))}
               </div>
-            ))}
-          </div>
-
-          <div className="mt-8 md:mt-8">
-            <h3 className="text-2xl font-bold mb-4 md:text-2xl">
-              Quick Links
-            </h3>
-            <div className="grid grid-cols-2 gap-3 md:gap-3">
-              {quickLinks.map((link, index) => (
-                <a key={index} href="#" className="text-white text-sm opacity-90 transition-opacity duration-300 hover:opacity-100 hover:underline">
-                  {link}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+            </motion.div>
+            
+            {/* Quick Links Column */}
+            <motion.div 
+              className="lg:w-1/3 mt-4 lg:mt-0 lg:ml-6"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white">Quick Links</h3>
+              <div className="grid grid-cols-1 gap-2">
+                {quickLinks.map((link, index) => (
+                  <motion.a 
+                    key={index} 
+                    href="#" 
+                    className="block p-1.5 text-white text-xs hover:bg-[#8B0CCC] rounded-lg transition-colors duration-300"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.05 * index + 0.6 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                  >
+                    {link}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* Right Section - Form */}
-        <div className="sticky top-5">
-          <div className="backdrop-blur-lg rounded-xl p-[90px] md:p-5">
-            <h2 className="text-white text-2xl font-bold mb-6 text-center md:text-xl">
+        <motion.div 
+          className="sticky top-3 md:sticky sm:static"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <div className="backdrop-blur-lg rounded-xl p-5 max-w-md mx-auto">
+            <motion.h2 
+              className="text-white text-xl font-bold mb-4 text-center"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               TALK TO WRITING EXPERT
-            </h2>
+            </motion.h2>
             
             <div>
-              <input
+              <motion.input
                 type="text"
                 name="name"
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full p-4 text-white mb-4 border-none rounded-full bg-[#8B0CCC] text-base"
+                className="w-full p-3 text-white mb-3 border-none rounded-full bg-[#8B0CCC] text-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
               />
               
-              <input
+              <motion.input
                 type="email"
                 name="email"
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-4 text-white mb-4 border-none rounded-full bg-[#8B0CCC] text-base"
+                className="w-full p-3 text-white mb-3 border-none rounded-full bg-[#8B0CCC] text-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                viewport={{ once: true, amount: 0.3 }}
               />
               
-              <input
+              <motion.input
                 type="tel"
                 name="phone"
                 placeholder="Your Phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full p-4 text-white mb-4 border-none rounded-full bg-[#8B0CCC] text-base"
+                className="w-full p-3 text-white mb-3 border-none rounded-full bg-[#8B0CCC] text-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
               />
               
-              <textarea
+              <motion.textarea
                 name="brief"
                 placeholder="Enter Brief"
                 value={formData.brief}
                 onChange={handleChange}
-                className="w-full p-5 text-white mb-4 border-none rounded-2xl bg-[#8B0CCC] text-base resize-y min-h-[100px]"
+                className="w-full p-3 text-white mb-3 border-none rounded-2xl bg-[#8B0CCC] text-sm resize-y min-h-[80px]"
                 rows="4"
-              ></textarea>
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.6 }}
+                viewport={{ once: true, amount: 0.3 }}
+              ></motion.textarea>
               
-              <button onClick={handleSubmit} className="w-full p-4 bg-[#8B0CCC] text-white border-none rounded-full text-lg font-bold cursor-pointer transition-transform duration-200 hover:-translate-y-0.5 mx-auto block">
+              <motion.button 
+                onClick={handleSubmit} 
+                className="w-full p-3 bg-[#8B0CCC] text-white border-none rounded-full text-base font-bold cursor-pointer transition-transform duration-200 hover:-translate-y-0.5 mx-auto block"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.7 }}
+                viewport={{ once: true, amount: 0.3 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
                 SUBMIT
-              </button>
+              </motion.button>
             </div>
 
-            <p className="text-white text-xs leading-relaxed mt-5 opacity-80 text-center md:text-xs">
+            <motion.p 
+              className="text-white text-[9px] leading-relaxed mt-3 opacity-80 text-center"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.8 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               By clicking the "Submit" button, you are agreeing to the eBook Authors terms 
               and conditions and privacy policy. Rest assured, we will never share your 
               personal information with third parties unless absolutely necessary for 
               service-related activities. Our commitment is to protect your data and maintain 
               the confidentiality of your information. Trust eBook Authors for secure and 
               reliable content creation services. View our complete details.
-            </p>
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
       </div>
-
-      <style>{`
-        /* Tablet Styles */
-        @media (max-width: 1024px) {
-          .footer-form-content-wrapper {
-            grid-template-columns: 1fr;
-            gap: 30px;
-          }
-
-          .footer-form-main-heading {
-            font-size: 2rem;
-          }
-
-          .footer-form-right-section {
-            position: static;
-            order: 3;
-          }
-
-          .footer-form-left-section {
-            order: 1;
-          }
-
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-          .footer-form-landing-container {
-            padding: 15px;
-          }
-
-          .footer-form-main-heading {
-            font-size: 1.5rem;
-          }
-
-          .footer-form-description {
-            font-size: 0.85rem;
-          }
-
-          .footer-form-form-container {
-            padding: 20px;
-          }
-
-          .footer-form-form-title {
-            font-size: 1.2rem;
-          }
-
-          .footer-form-form-input,
-          .footer-form-form-textarea {
-            padding: 12px;
-            font-size: 0.9rem;
-          }
-
-          .footer-form-submit-button {
-            padding: 12px;
-          }
-        }
-
-        /* Small Mobile Styles */
-        @media (max-width: 480px) {
-          .footer-form-main-heading {
-            font-size: 1.3rem;
-          }
-
-          .footer-form-service-item {
-            font-size: 0.85rem;
-          }
-
-          .footer-form-form-container {
-            padding: 15px;
-          }
-
-          .footer-form-disclaimer {
-            font-size: 0.65rem;
-          }
-        }
-      `}</style>
     </div>
   );
 }

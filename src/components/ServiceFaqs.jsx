@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import waveGradient from '../assets/Images/plaid_gradient.png';
 
@@ -37,40 +38,54 @@ export default function FAQAccordion() {
   };
 
   return (
-    <div className="min-h-screen py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Decorative elements with improved viewport settings for all zoom levels */}
-      <div 
-        className="absolute h-[50%] left-0 top-0 w-[200px]"
+    <div className="py-6 sm:py-8 lg:py-16 px-3 sm:px-4 lg:px-8 relative overflow-hidden">
+      {/* Decorative elements with improved responsiveness */}
+      <motion.div 
+        className="absolute h-[40%] left-0 top-0 w-[90px] sm:w-[200px]"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <img src={waveGradient} alt="" className="w-full h-full object-cover" />
-      </div>
+      </motion.div>
       
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-full sm:max-w-4xl mx-auto relative z-10">
         {/* Header */}
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-800 text-center mb-8 sm:mb-12 tracking-tight">
+        <motion.h1 
+          className="text-2xl sm:text-3xl lg:text-5xl font-black text-gray-800 text-center mb-6 sm:mb-8 lg:mb-12 tracking-tight"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           FAQS
-        </h1>
+        </motion.h1>
 
         {/* FAQ Items */}
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-2 sm:space-y-3 lg:space-y-4">
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white rounded-xl sm:rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+              className="bg-white rounded-lg sm:rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               {/* Question Button */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 flex items-center justify-between bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 transition-all duration-300 group"
+                className="w-full px-3 sm:px-4 lg:px-8 py-3 sm:py-4 lg:py-6 flex items-center justify-between bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 transition-all duration-300 group"
               >
-                <span className="text-left text-white font-semibold text-sm sm:text-base lg:text-lg pr-4">
+                <span className="text-left text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg pr-2">
                   {faq.question}
                 </span>
                 <div className="flex-shrink-0">
                   {openIndex === index ? (
-                    <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-white transform group-hover:scale-110 transition-transform" />
+                    <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white transform group-hover:scale-110 transition-transform" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-white transform group-hover:scale-110 transition-transform" />
+                    <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white transform group-hover:scale-110 transition-transform" />
                   )}
                 </div>
               </button>
@@ -78,16 +93,24 @@ export default function FAQAccordion() {
               {/* Answer */}
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  openIndex === index ? 'max-h-[50vh] sm:max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 bg-white">
-                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <motion.div 
+                  className="px-3 sm:px-4 lg:px-8 py-3 sm:py-4 lg:py-6 bg-white"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ 
+                    opacity: openIndex === index ? 1 : 0,
+                    height: openIndex === index ? 'auto' : 0
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed">
                     {faq.answer}
                   </p>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

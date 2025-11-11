@@ -1,214 +1,119 @@
 import React from 'react';
-import phoneIcon from '../assets/Images/Icon-1.png';
-import mailIcon from '../assets/Images/Icon-2.png';
-import mapIcon from '../assets/Images/Icon-3.png';
+import { motion } from 'framer-motion';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function ContactHeaderBar() {
   return (
-    <div className="contact-footer-header">
-      <div className="contact-footer-container">
-        <div className="contact-footer-item">
-          <div className="contact-footer-icon-wrapper">
-            <img src={phoneIcon} alt="Phone" className="contact-footer-phone-icon" />
+    <div className="bg-[#3A0368] py-2 px-10 sm:py-3 sm:px-5 md:py-4 md:px-10 lg:py-5 lg:px-10 border-t border-b border-white">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 items-center">
+        <motion.div 
+          className="flex items-center gap-2 sm:gap-3 md:gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div 
+            className="bg-white/20 rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              duration: 0.3,
+              delay: 0.1,
+              type: "spring",
+              stiffness: 300,
+              damping: 15
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ 
+              y: -5,
+              transition: { duration: 0.2 }
+            }}
+          >
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
+          </motion.div>
+          <div className="flex flex-col gap-0 sm:gap-0.5 md:gap-1">
+            <div className="text-white text-sm sm:text-sm md:text-sm lg:text-sm font-bold uppercase tracking-[0.5px] opacity-90">
+              CALL NOW
+            </div>
+            <div className="text-white text-sm sm:text-sm md:text-sm lg:text-base font-medium">
+              (801)-856-7738
+            </div>
           </div>
-          <div className="contact-footer-info">
-            <div className="contact-footer-label">CALL NOW</div>
-            <div className="contact-footer-value">(801)-856-7738</div>
-          </div>
-        </div>
+        </motion.div>
 
-        <div className="contact-footer-item">
-          <div className="contact-footer-icon-wrapper">
-            <img src={mailIcon} alt="Mail" className="contact-footer-mail-icon" />
+        <motion.div 
+          className="flex items-center gap-2 sm:gap-3 md:gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div 
+            className="bg-white/20 rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              duration: 0.3,
+              delay: 0.2,
+              type: "spring",
+              stiffness: 300,
+              damping: 15
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ 
+              y: -5,
+              transition: { duration: 0.2 }
+            }}
+          >
+            <Mail className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
+          </motion.div>
+          <div className="flex flex-col gap-0 sm:gap-0.5 md:gap-1">
+            <div className="text-white text-sm sm:text-sm md:text-sm lg:text-sm font-bold uppercase tracking-[0.5px] opacity-90">
+              MAIL US AT
+            </div>
+            <div className="text-white text-sm sm:text-sm md:text-sm lg:text-base font-medium">
+              info@hymnmarket.com
+            </div>
           </div>
-          <div className="contact-footer-info">
-            <div className="contact-footer-label">MAIL US AT</div>
-            <div className="contact-footer-value">info@hymnmarket.com</div>
-          </div>
-        </div>
+        </motion.div>
 
-        <div className="contact-footer-item">
-          <div className="contact-footer-icon-wrapper">
-            <img src={mapIcon} alt="Location" className="contact-footer-map-icon" />
+        <motion.div 
+          className="flex items-center gap-2 sm:gap-3 md:gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div 
+            className="bg-white/20 rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              duration: 0.3,
+              delay: 0.3,
+              type: "spring",
+              stiffness: 300,
+              damping: 15
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ 
+              y: -5,
+              transition: { duration: 0.2 }
+            }}
+          >
+            <MapPin className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
+          </motion.div>
+          <div className="flex flex-col gap-0 sm:gap-0.5 md:gap-1">
+            <div className="text-white text-[0.6rem] sm:text-[0.65rem] md:text-[0.7rem] lg:text-[0.75rem] font-bold uppercase tracking-[0.5px] opacity-90">
+              FIND US AT
+            </div>
+            <div className="text-white text-[0.7rem] sm:text-[0.75rem] md:text-[0.85rem] lg:text-[0.9rem] font-medium whitespace-normal break-words">
+              1090 Montauk Hwy # 300, New York, NY 10158, United States
+            </div>
           </div>
-          <div className="contact-footer-info">
-            <div className="contact-footer-label">FIND US AT</div>
-            <div className="contact-footer-value">1090 Montauk Hwy # 300, New York, NY 10158, United States</div>
-          </div>
-        </div>
+        </motion.div>
       </div>
-
-      <style>{`
-        .contact-footer-header {
-          background: #3A0368;
-          padding: 15px 20px;
-          font-family: 'TuskerGrotesk', sans-serif;
-          border-top: 1px solid white;
-          border-bottom: 1px solid white;
-        }
-
-        .contact-footer-container {
-          max-width: 1400px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 30px;
-          align-items: center;
-        }
-
-        .contact-footer-item {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-        }
-
-        .contact-footer-icon-wrapper {
-          background: rgba(255, 255, 255, 0.2);
-          border-radius: 50%;
-          width: 45px;
-          height: 45px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-
-        .contact-footer-phone-icon,
-        .contact-footer-mail-icon,
-        .contact-footer-map-icon {
-          width: 24px;
-          height: 24px;
-        }
-
-        .contact-footer-mail-icon::before,
-        .contact-footer-map-icon::before {
-          content: "";
-        }
-
-        .contact-footer-mail-icon::before {
-          content: "✉️";
-          font-size: 16px;
-        }
-
-        .contact-footer-map-icon::before {
-          content: "📍";
-          font-size: 16px;
-        }
-
-        .contact-footer-info {
-          display: flex;
-          flex-direction: column;
-          gap: 2px;
-        }
-
-        .contact-footer-label {
-          color: white;
-          font-size: 0.75rem;
-          font-weight: bold;
-          letter-spacing: 0.5px;
-          opacity: 0.9;
-        }
-
-        .contact-footer-value {
-          color: white;
-          font-size: 0.9rem;
-          font-weight: 500;
-        }
-
-        /* Tablet Styles */
-        @media (max-width: 1024px) {
-          .contact-footer-container {
-            grid-template-columns: 1fr;
-            gap: 20px;
-          }
-
-          .contact-footer-item {
-            justify-content: center;
-            text-align: left;
-          }
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-          .contact-footer-header {
-            padding: 15px;
-          }
-
-          .contact-footer-container {
-            gap: 15px;
-            justify-content: flex-start;
-            text-align: left;
-          }
-
-          .contact-footer-item {
-            justify-content: flex-start;
-            text-align: left;
-          }
-
-          .contact-footer-icon-wrapper {
-            width: 40px;
-            height: 40px;
-          }
-
-          .contact-footer-phone-icon,
-          .contact-footer-mail-icon,
-          .contact-footer-map-icon {
-            width: 18px;
-            height: 18px;
-          }
-
-          .contact-footer-phone-icon::before,
-          .contact-footer-mail-icon::before,
-          .contact-footer-map-icon::before {
-            font-size: 14px;
-          }
-
-          .contact-footer-label {
-            font-size: 0.7rem;
-          }
-
-          .contact-footer-value {
-            font-size: 0.85rem;
-          }
-        }
-
-        /* Small Mobile Styles */
-        @media (max-width: 480px) {
-          .contact-footer-header {
-            padding: 12px;
-          }
-
-          .contact-footer-item {
-            gap: 10px;
-          }
-
-          .contact-footer-icon-wrapper {
-            width: 35px;
-            height: 35px;
-          }
-
-          .contact-footer-phone-icon,
-          .contact-footer-mail-icon,
-          .contact-footer-map-icon {
-            width: 16px;
-            height: 16px;
-          }
-
-          .contact-footer-phone-icon::before,
-          .contact-footer-mail-icon::before,
-          .contact-footer-map-icon::before {
-            font-size: 12px;
-          }
-
-          .contact-footer-label {
-            font-size: 0.65rem;
-          }
-
-          .contact-footer-value {
-            font-size: 0.75rem;
-          }
-        }
-      `}</style>
     </div>
   );
 }

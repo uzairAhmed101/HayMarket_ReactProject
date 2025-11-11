@@ -1,41 +1,80 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import serviceImage from '../assets/Images/Service-S4.png';
 
 export default function BioWritingHeroSection() {
   return (
-    <div className="relative min-h-[400px] sm:min-h-[400px] lg:min-h-[400px] w-full overflow-hidden">
+    <div className="relative min-h-[320px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[540px] w-full overflow-hidden">
       {/* Background Image - Full coverage without cutting */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat">
+      <motion.div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <img 
           src={serviceImage} 
           alt="Service Background" 
           className="w-full h-full object-cover object-center"
         />
-      </div>
+      </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-[400px] sm:min-h-[400px] lg:min-h-[400px] px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-5xl mx-auto py-16">
-          <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl font-bold text-white mb-2 sm:mb-2 leading-tight">
+      <div className="relative z-10 flex items-center justify-center min-h-[320px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[540px] px-2 sm:px-6 lg:px-8">
+        <motion.div 
+          className="text-center max-w-3xl sm:max-w-4xl md:max-w-5xl mx-auto py-8 sm:py-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.h1 
+            className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 text-white leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             PROFESSIONAL BIO WRITING SERVICES BY EXPERT
             <br />
             BIO WRITERS!
-          </h1>
+          </motion.h1>
           
-          <p className="text-white text-sm sm:text-sm lg:text-sm mb-6 sm:mb-8 px-4">
+          <motion.p 
+            className="text-white text-xs sm:text-sm md:text-base mb-6 sm:mb-8 px-2 sm:px-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             With our professional bio writing services we guarantee that your biography book will become the bestselling.
-          </p>
+          </motion.p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-            <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 sm:px-10 py-1 sm:py-4 rounded-full transition-all duration-300 shadow-lg w-full sm:w-auto text-sm sm:text-base">
+          <motion.div 
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 w-full"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.button 
+              className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 sm:px-10 py-2 sm:py-3 rounded-full transition-all duration-300 shadow-lg w-full sm:w-auto text-sm sm:text-base"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Call Now
-            </button>
-            <button className="bg-white hover:bg-purple-600 text-purple-600 hover:text-white font-semibold px-8 sm:px-18 py-1 sm:py-4 rounded-full transition-all duration-300 shadow-lg w-full sm:w-auto text-sm sm:text-base">
+            </motion.button>
+            <motion.button 
+              className="bg-white hover:bg-purple-600 text-purple-600 hover:text-white font-semibold px-6 sm:px-10 py-2 sm:py-3 rounded-full transition-all duration-300 shadow-lg w-full sm:w-auto text-sm sm:text-base"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Live Chat
-            </button>
-          </div>
-        </div>
+            </motion.button>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

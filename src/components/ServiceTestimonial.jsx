@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import testimonialImage1 from '../assets/Images/testimonial-1.webp';
 import testimonialImage2 from '../assets/Images/testimonial-2.webp';
@@ -26,59 +27,109 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-black py-4 px-2 sm:px-3 lg:px-30 py-20">
-      <div className="max-w-6xl mx-auto">
+    <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-black py-10 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-white text-center mb-4 lg:mb-6 tracking-tight">
+        <motion.h1 
+          className="text-2xl sm:text-3xl md:text-4xl font-black text-white text-center mb-8 sm:mb-12 md:mb-16 tracking-tight"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           TESTIMONIALS!
-        </h1>
+        </motion.h1>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-3">
-          {testimonials.map((testimonial) => (
-            <div
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <motion.div
               key={testimonial.id}
-              className="bg-gray-100 rounded-lg p-2 sm:p-3 lg:p-4 shadow-md relative overflow-hidden h-80"
+              className="bg-gray-100 rounded-lg p-4 sm:p-6 md:p-8 shadow-md relative overflow-hidden min-h-[320px] sm:min-h-[380px]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+              viewport={{ once: true, amount: 0.3 }}
+              whileHover={{ scale: 1.02 }}
             >
               {/* Purple gradient accent */}
-              <div className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-full blur-2xl opacity-15 -translate-x-1/2 translate-y-1/2"></div>
+              <div className="absolute bottom-0 left-0 w-24 sm:w-32 h-24 sm:h-40 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-full blur-2xl opacity-15 -translate-x-1/2 translate-y-1/2"></div>
               
               <div className="relative z-10 h-full flex flex-col justify-center">
-                {/* Combined Content - Left center aligned */}
-                <div className="flex flex-col lg:flex-row items-center mb-2">
+                {/* Combined Content */}
+                <div className="flex flex-col md:flex-row items-center mb-3 sm:mb-4 md:mb-5">
                   {/* Left Column - Author Info and Text */}
-                  <div className="flex-1">
+                  <motion.div 
+                    className="flex-1 w-full md:w-auto md:pr-6"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.1 * index + 0.2 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                  >
                     {/* Author Info */}
-                    <div className="flex items-center mb-1">
-                      <img
+                    <div className="flex items-center mb-2 sm:mb-3">
+                      <motion.img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-md object-cover shadow"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-md object-cover shadow"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: 0.1 * index + 0.3 }}
+                        viewport={{ once: true, amount: 0.3 }}
                         onError={(e) => {
                           e.target.onerror = null;
                           e.target.src = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop';
                         }}
                       />
-                      <h3 className="text-sm sm:text-base font-black text-purple-600 tracking-tight ml-2">
+                      <motion.h3 
+                        className="text-base sm:text-lg font-black text-purple-600 tracking-tight ml-3"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: 0.1 * index + 0.4 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                      >
                         {testimonial.name}
-                      </h3>
+                      </motion.h3>
                     </div>
                     
-                    {/* Testimonial Text - Decreased width */}
-                    <p className="text-gray-700 text-xs leading-relaxed font-tusker w-4/5">
+                    {/* Testimonial Text */}
+                    <motion.p 
+                      className="text-gray-700 text-xs sm:text-sm md:text-sm leading-relaxed w-full"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.1 * index + 0.5 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                    >
                       {testimonial.text}
-                    </p>
-                  </div>
+                    </motion.p>
+                  </motion.div>
 
                   {/* Right Column - Book Image */}
-                  <div className="mt-2 lg:mt-0 lg:ml-3">
+                  <motion.div 
+                    className="mt-4 sm:mt-6 md:mt-0 md:ml-4 lg:ml-6"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.1 * index + 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                  >
                     <div className="relative group">
-                      <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-md blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
+                      <div className="absolute -inset-1 rounded-md blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
                       <div className="relative">
-                        <img
+                        <motion.img
                           src={testimonial.bookImage}
                           alt={testimonial.bookTitle}
-                          className="w-20 sm:w-24 lg:w-32 h-auto rounded-md shadow-md transform hover:scale-105 transition duration-300"
+                          className="w-36 sm:w-40 md:w-44 lg:w-48 h-auto transform hover:scale-105 transition duration-300"
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.3, delay: 0.1 * index + 0.4 }}
+                          viewport={{ once: true, amount: 0.3 }}
+                          whileHover={{ scale: 1.05 }}
                           onError={(e) => {
                             e.target.onerror = null;
                             e.target.src = 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop';
@@ -86,22 +137,28 @@ export default function Testimonials() {
                         />
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
 
-                {/* Star Rating - Left aligned */}
-                <div className="flex gap-0.5 justify-start">
+                {/* Star Rating */}
+                <motion.div 
+                  className="flex gap-1 sm:gap-2 justify-start mt-2 sm:mt-3"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 * index + 0.6 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                >
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-yellow-400 text-yellow-400"
+                      className="w-3 h-3 sm:w-4 sm:h-4 fill-yellow-400 text-yellow-400"
                     />
                   ))}
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

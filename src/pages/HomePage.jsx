@@ -9,13 +9,14 @@ import LogoBar from '../components/LogoBar.jsx'
 import OurServices from '../components/ourServices.jsx'
 import NeedAssitance from '../components/needAssitance.jsx'
 import WhyChooseUs from '../components/whyChooseUs.jsx'
-import Section7 from '../components/Section7.jsx'
+import Section7 from '../components/SeeWhatPeopleSay.jsx'
 import Blogs from '../components/Blogs.jsx'
 import Form from '../components/Form.jsx'
 import ContactFooter from '../components/ContactFooter.jsx'
 import FooterForm from '../components/FooterForm.jsx'
 import Logobar2 from '../components/Logo.jsx'
 import Disclaimer2 from '../components/Disclaimerfooter.jsx'
+import FAQs from '../components/FAQ.jsx'
 
 // Force redeploy to fix import issues
 
@@ -31,6 +32,7 @@ const HomePage = () => {
         <NeedAssitance />
         <WhyChooseUs />
         <Section7 />
+        <FAQs />
         <Blogs />
         <Form />
         <Logobar2 />

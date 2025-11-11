@@ -2,24 +2,9 @@
 @import "tailwindcss/preflight" layer(base);
 @import "tailwindcss/utilities" layer(utilities);
 
-@font-face {
-  font-family: 'TuskerGrotesk';
-  src: url('./assets/fonts/TuskerGrotesk-4700Bold.ttf') format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: 'TuskerGrotesk';
-  src: url('./assets/fonts/TuskerGrotesk-4500Medium.ttf') format('truetype');
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: 'TuskerGrotesk';
-  src: url('./assets/fonts/TuskerGrotesk-4600Semibold.ttf') format('truetype');
-  font-weight: 600;
-}
-
 html, body{
     overflow-x: hidden;
+    font-family: 'TuskerGrotesk', sans-serif;
+    letter-spacing: 0.025em;
+    font-weight: 100; /* Use lightest weight as default */
 }

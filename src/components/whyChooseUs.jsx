@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MotionStaggerDiv, MotionFadeInUp } from './AnimationUtils';
 
 export default function WhyChooseUs() {
   const cards = [
@@ -27,35 +26,53 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-20 relative">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-10 py-20 sm:px-8 md:px-12 py-10 lg:px-16 py-20 xl:px-20 py-20 relative">
       {/* Title */}
-      <MotionFadeInUp>
-        <div className="text-center mb-20 md:mb-15 sm:mb-12 text-5xl md:text-4xl sm:text-3xl font-bold font-tusker">
-          WHY <span className="text-[#8E2DE2]">CHOOSE</span> US
-        </div>
-      </MotionFadeInUp>
+      <motion.div
+        className="text-center mb-12 sm:mb-12 md:mb-16 lg:mb-20 text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 font-tusker"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        WHY <span className="text-[#8E2DE2]">CHOOSE</span> US
+      </motion.div>
 
       {/* Cards Container */}
-      <MotionStaggerDiv className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7.5 md:gap-6.25 sm:gap-12.5">
+      <motion.div 
+        className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-12 md:gap-8 lg:gap-7 xl:gap-7.5"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {cards.map((card, index) => (
-          <MotionFadeInUp key={index} className="flex flex-col relative items-center">
+          <motion.div 
+            key={index} 
+            className="flex flex-col relative items-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 * index }}
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ y: -10 }}
+          >
             {/* Card Box */}
-            <div className="bg-[#f0f0f0] rounded-[20px] p-3 md:p-[15px] sm:p-2 mb-7.5 md:mb-6 sm:mb-5 flex-grow min-h-[200px] md:min-h-[180px] sm:min-h-[160px] text-center shadow-[1px_1px_5px_gray] relative w-full">
-              <h3 className="font-extrabold text-sm md:text-base sm:text-md mb-2 text-[#8E2DE2] font-tusker">
+            <div className="bg-[#f0f0f0] rounded-[20px] p-4 sm:p-3 md:p-4 lg:p-3 xl:p-3 mb-5 sm:mb-5 md:mb-6 lg:mb-7.5 flex-grow min-h-[160px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[200px] text-center shadow-[1px_1px_5px_gray] relative w-full">
+              <h3 className="font-extrabold text-sm sm:text-sm md:text-sm lg:text-sm mb-2 text-[#8E2DE2] font-tusker">
                 {card.title}
               </h3>
-              <p className="text-[0.8rem] font-semibold pb-10">
+              <p className="text-xs sm:text-xs md:text-xs pb-10">
                 {card.description}
               </p>
             </div>
 
             {/* Number */}
-            <div className="text-[5rem] sm:text-[5rem] xs:text-[4rem] font-bold text-[#8E2DE2] text-center absolute bottom-[-33px] md:bottom-[-25px] sm:bottom-[-20px] xs:bottom-[-15px] left-1/2 transform -translate-x-1/2 w-full font-tusker">
+            <div className="text-lg sm:text-5xl md:text-7xl lg:text-9xl font-bold text-[#8E2DE2] text-center absolute bottom-[-15px] sm:bottom-[-20px] md:bottom-[-25px] lg:bottom-[-33px] left-1/2 transform -translate-x-1/2 w-full font-tusker">
               {card.number}
             </div>
-          </MotionFadeInUp>
+          </motion.div>
         ))}
-      </MotionStaggerDiv>
+      </motion.div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { User, Heart, Eye } from 'lucide-react';
 import blogImage1 from '../assets/Images/Rectangle 1 (1).png';
 import blogImage2 from '../assets/Images/Rectangle 1 (2).png';
 import blogImage3 from '../assets/Images/Rectangle 1 (3).png';
@@ -42,63 +43,67 @@ export default function BlogsSection() {
 
   return (
     <>
-      <div className="mx-auto w-full relative flex flex-col items-center justify-center p-40">
-        {/* Decorative elements with improved viewport settings for all zoom levels */}
-        <div 
-          className="absolute h-[50%] left-0 top-0"
+      <div className="mx-auto w-full relative flex flex-col items-center justify-center sm:p-8 md:p-15 lg:px-20">
+        <motion.div 
+          className="absolute h-[30%] sm:h-[35%] md:h-[40%] lg:h-[45%] xl:h-[50%] left-0 top-0"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <img src={waveGradient} alt="" className="w-full h-full object-cover" />
-        </div>
+        </motion.div>
         
-        <div 
-          className="absolute h-[50%] right-[20%] bottom-[-35%]"
+        <motion.div 
+          className="absolute h-[30%] sm:h-[35%] md:h-[40%] lg:h-[45%] xl:h-[50%] right-[10%] sm:right-[15%] lg:right-[20%] bottom-[-20%] sm:bottom-[-25%] md:bottom-[-30%] lg:bottom-[-35%]"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <img src={waveGradient2} alt="" className="w-full h-full object-cover" />
-        </div>
+        </motion.div>
 
-        <div className="text-center mb-[70px] md:mb-[50px] sm:mb-10 xs:mb-[30px] relative z-10">
-          <h1 className="text-[42px] md:text-[36px] sm:text-[32px] xs:text-[28px] font-bold text-[#1a1a1a] tracking-[1px] font-tusker">
+        <div className="text-center mb-[30px] sm:mb-10 md:mb-[50px] lg:mb-[60px] xl:mb-[70px] relative z-10">
+          <h1 className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-2 text-[#1a1a1a] tracking-[1px]">
             LATEST <span className="text-[#a020f0]">BLOGS</span>
           </h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[35px] md:gap-[25px] sm:gap-5 xs:gap-[15px] relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[15px] sm:gap-5 md:gap-[25px] lg:gap-[30px] xl:gap-[35px] relative z-10">
           {blogs.map((blog) => (
             <div key={blog.id} className="bg-white rounded-[20px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300 flex flex-col hover:translate-y-[-10px] hover:shadow-[0_15px_45px_rgba(160,32,240,0.2)]">
-              <div className="w-full h-[220px] sm:h-[180px] xs:h-[200px] bg-gradient-to-br from-[#f0f0f0] to-[#e8e8e8] overflow-hidden flex items-center justify-center text-[60px] text-[#ddd] flex-shrink-0">
+              <div className="w-full h-[180px] sm:h-[200px] md:h-[200px] lg:h-[210px] xl:h-[220px] bg-gradient-to-br from-[#f0f0f0] to-[#e8e8e8] overflow-hidden flex items-center justify-center text-[60px] text-[#ddd] flex-shrink-0">
                 <img src={blog.image} alt={blog.title} className="w-[90%] h-[90%]" />
               </div>
               
-              <div className="p-[25px] sm:p-5 xs:p-[15px] flex-grow flex flex-col">
-                <div className="flex gap-5 sm:gap-[15px] xs:gap-[10px] mb-[15px] xs:mb-3 flex-wrap text-[13px] sm:text-[12px] xs:text-[10px] text-[#999]">
+              <div className="p-[15px] sm:p-5 md:p-[22px] lg:p-[25px] flex-grow flex flex-col">
+                <div className="flex gap-[10px] sm:gap-[15px] md:gap-4 lg:gap-5 mb-3 sm:mb-3 lg:mb-[15px] flex-wrap text-[10px] sm:text-[12px] md:text-[12px] lg:text-[13px] text-[#999]">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-[#a020f0] font-bold text-[14px] sm:text-[12px] xs:text-[10px]">📅</span>
-                    <span>{blog.date}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-[#a020f0] font-bold text-[14px] sm:text-[12px] xs:text-[10px]">✍️</span>
+                    <User className="text-[#a020f0] font-medium text-[10px] sm:text-[12px] lg:text-[14px] w-4 h-4 sm:w-5 sm:h-5" />
                     <span>{blog.author}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <div className="relative w-[14px] h-[14px]">
-                      <div className="absolute w-[14px] h-[14px] bg-[#a020f0] rounded-full top-[-7px] left-0"></div>
-                      <div className="absolute w-[14px] h-[14px] bg-[#a020f0] rounded-full top-0 left-[7px]"></div>
-                    </div>
+                    <Heart className="text-[#a020f0] w-4 h-4 sm:w-5 sm:h-5" />
                     <span>{blog.likes}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <div className="inline-block w-4 h-4 border-2 border-[#a020f0] rounded-full relative">
-                      <div className="absolute w-2 h-2 bg-[#a020f0] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-                    </div>
+                    <Eye className="text-[#a020f0] w-4 h-4 sm:w-5 sm:h-5" />
                     <span>{blog.views}</span>
                   </div>
                 </div>
                 
-                <h3 className="text-[18px] sm:text-[16px] xs:text-[14px] font-bold text-[#1a1a1a] mb-2 xs:mb-1.5 leading-[1.4] font-tusker">
+                <h3 className="text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px] font-semibold text-[#1a1a1a] mb-1.5 sm:mb-2 leading-[1.4] font-tusker">
                   <span className="text-[#a020f0]">Haymarket</span> Publishers
                 </h3>
                 
-                <p className="text-[14px] sm:text-[13px] xs:text-[11px] leading-[1.6] text-[#666] flex-grow">
+                <p className="text-[11px] sm:text-[13px] md:text-[13px] lg:text-[14px] leading-[1.6] text-[#666] flex-grow">
                   {blog.description}
                 </p>
               </div>

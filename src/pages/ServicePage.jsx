@@ -22,8 +22,6 @@ import Disclaimer2 from '../components/Disclaimerfooter.jsx'
 import Form from '../components/Form.jsx'
 
 const ServicePage = () => {
-  console.log('ServicePage component is rendering');
-  
   return (
     <div>
         <Header />

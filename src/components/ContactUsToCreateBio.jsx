@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ShoppingCart, FileText, CheckCircle, Edit, Layout, Palette, BookOpen, TrendingUp } from 'lucide-react';
 import halfCircleGradient from '../assets/Images/circular_gradient.png';
 
@@ -55,54 +56,112 @@ export default function BiographyStepsSection() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-white py-6 sm:py-8 lg:py-30 px-3 sm:px-4 lg:px-6 overflow-hidden">
+    <div className="relative min-h-screen bg-white py-6 sm:py-10 lg:py-20 px-2 sm:px-4 lg:px-8 overflow-hidden">
       {/* Decorative elements*/}
-      <div 
-        className="absolute z-0 pointer-events-none -top-[115px] -left-3 h-[89%] origin-center"
+      <motion.div 
+        className="
+          absolute z-0 pointer-events-none
+          -top-[60px] -left-2
+          sm:-top-[90px] sm:-left-3
+          md:-top-[115px] md:-left-3
+          h-[80px] sm:h-[120px] md:h-[60%]
+          origin-center
+        "
         style={{ rotate: '0deg' }}
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <img 
           src={halfCircleGradient} 
           alt="" 
-          className="h-[83%] w-auto object-cover" 
+          className="h-full w-auto object-cover" 
         />
-      </div>
+      </motion.div>
       
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10">
         {/* Heading Section */}
-        <div className="text-center mb-6 sm:mb-8">
-          <h1 className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 leading-tight">
+        <motion.div 
+          className="text-center mb-6 sm:mb-8"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.h1 
+            className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 leading-tight"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <span className="text-purple-600">CONTACT US TO CREATE A BIOGRAPHY FOR</span>
             <br />
             <span className="text-black">YOURSELF IN THESE 8 SIMPLE STEPS:</span>
-          </h1>
+          </motion.h1>
           
-          <p className="text-gray-700 text-xs max-w-2xl mx-auto mt-1">
+          <motion.p 
+            className="text-gray-700 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mt-1"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             Don't know how the biography writing process would proceed? Review our 8-step process for more understanding.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {steps.map((step, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-gray-700 hover:bg-purple-600 rounded-2xl p-3 sm:p-4 text-white shadow-sm hover:shadow-md transition-all duration-300 min-h-[180px]"
+              className="bg-gray-700 hover:bg-purple-600 rounded-2xl p-3 sm:p-4 md:p-5 text-white shadow-sm hover:shadow-md transition-all duration-300 min-h-[160px] sm:min-h-[180px] flex flex-col"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+              viewport={{ once: true, amount: 0.3 }}
+              whileHover={{ scale: 1.05 }}
             >
-              <div className="mb-2">
-                <step.icon className="w-6 h-6 sm:w-7 sm:h-7" strokeWidth={1.5} />
-              </div>
+              <motion.div 
+                className="mb-2"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.1 * index + 0.1 }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <step.icon className="w-10 h-10 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14" strokeWidth={1.5} />
+              </motion.div>
               
-              <h3 className="text-xs sm:text-sm font-bold mb-1 sm:mb-2 uppercase">
+              <motion.h3 
+                className="text-xs sm:text-sm md:text-base font-bold mb-1 sm:mb-2 uppercase"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 * index + 0.2 }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 {step.title}
-              </h3>
+              </motion.h3>
               
-              <p className="text-xs leading-relaxed opacity-90">
+              <motion.p 
+                className="text-[0.65rem] sm:text-xs md:text-sm leading-relaxed opacity-90"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 * index + 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 {step.description}
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

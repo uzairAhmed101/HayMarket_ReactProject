@@ -1,189 +1,49 @@
-import React from 'react';
-import logoBar21 from '../assets/Images/LogoBar-2-1.png';
-import logoBar22 from '../assets/Images/LogoBar-2-2.png';
-import logoBar23 from '../assets/Images/LogoBar-2-3.png';
-import logoBar24 from '../assets/Images/LogoBar-2-4.png';
-import logoBar25 from '../assets/Images/LogoBar-2-5.png';
+import React from "react";
+import logoBar21 from "../assets/Images/LogoBar-2-1.png";
+import logoBar22 from "../assets/Images/LogoBar-2-2.png";
+import logoBar23 from "../assets/Images/LogoBar-2-3.png";
+import logoBar24 from "../assets/Images/LogoBar-2-4.png";
+import logoBar25 from "../assets/Images/LogoBar-2-5.png";
 
 export default function Logobar2() {
   return (
-    <>
-      <div className="border-t border-white bg-[#3A0368] py-4 px-8 flex items-center justify-between gap-4 flex-wrap md:px-4 md:justify-center sm:gap-3">
-        {/* Left Section - Logo */}
-        <div className="flex items-center gap-4">
-          <img 
-            src={logoBar21} 
-            alt="Logo" 
-            className="logo-bar-2-logo-image"
-            style={{
-              height: '3.5rem',
-              width: 'auto',
-              padding: '0.5rem'
-            }}
+    <div className="bg-[#3A0368] border-t border-white py-2 px-3 sm:py-3 sm:px-4 md:py-4 md:px-6 lg:py-5 lg:px-8">
+      <div className="flex items-center justify-between gap-3 sm:gap-4 md:gap-6 lg:gap-8 w-full md:min-w-[400px]">
+        {/* -------------------  LEFT (main logo) ------------------- */}
+        <div className="flex-shrink-0">
+          <img
+            src={logoBar21}
+            alt="Main logo"
+            className="h-15 sm:h-10 md:h-15 lg:h-15 xl:h-15 object-contain max-w-full"
           />
         </div>
+        <div className="flex items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 flex-1 justify-center">
+          <div className="hidden md:block w-px h-4 bg-white/30" />
 
-        {/* Center Section - Badges */}
-        <div className="flex items-center gap-[3.75rem] flex-wrap justify-center">
-          <div className="logo-bar-2-divider"></div>
-
-          <img 
-            src={logoBar22} 
-            alt="Logo 2" 
-            className="logo-bar-2-logo-image"
-            style={{
-              height: '2.5rem',
-              width: 'auto',
-              padding: '0.3rem'
-            }}
+          <img
+            src={logoBar22}
+            alt="Partner 1"
+            className="h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 object-contain max-w-full"
           />
-          <img 
-            src={logoBar23} 
-            alt="Logo 3" 
-            className="logo-bar-2-logo-image"
-            style={{
-              height: '2.5rem',
-              width: 'auto',
-              padding: '0.3rem'
-            }}
+          <img
+            src={logoBar23}
+            alt="Partner 2"
+            className="h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 object-contain max-w-full"
           />
-          <img 
-            src={logoBar24} 
-            alt="Logo 4" 
-            className="logo-bar-2-logo-image"
-            style={{
-              height: '2.5rem',
-              width: 'auto',
-              padding: '0.3rem'
-            }}
-          />
-          <img 
-            src={logoBar25} 
-            alt="Logo 5" 
-            className="logo-bar-2-logo-image"
-            style={{
-              height: '2.5rem',
-              width: 'auto',
-              padding: '0.3rem'
-            }}
+          <img
+            src={logoBar24}
+            alt="Partner 3"
+            className="h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 object-contain max-w-full"
           />
         </div>
-
-        {/* Right Section - Trust Badges */}
-        <div className="flex items-center gap-3">
-          <div className="logo-bar-2-trustpilot-badge">
-          </div>
+        <div className="flex-shrink-0">
+          <img
+            src={logoBar25}
+            alt="Partner 4"
+            className="h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 object-contain max-w-full"
+          />
         </div>
       </div>
-
-      <style>{`
-        .logo-bar-2-badge-group {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .logo-bar-2-trustpilot-logo {
-          font-size: 0.75rem;
-          font-weight: bold;
-          color: #00b67a;
-        }
-
-        .logo-bar-2-stars {
-          display: flex;
-          gap: 0.125rem;
-        }
-
-        .logo-bar-2-star {
-          width: 0.75rem;
-          height: 0.75rem;
-          background-color: #00b67a;
-          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-        }
-
-        .logo-bar-2-satisfaction-badge {
-          background-color: #ffd700;
-          padding: 0.5rem 1rem;
-          border-radius: 50%;
-          width: 3rem;
-          height: 3rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          font-size: 0.5rem;
-          font-weight: bold;
-          color: #4a148c;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-          position: relative;
-        }
-
-        .logo-bar-2-satisfaction-badge::before {
-          content: '';
-          position: absolute;
-          width: 120%;
-          height: 120%;
-          border: 2px dashed #ffd700;
-          border-radius: 50%;
-          opacity: 0.5;
-        }
-
-        @media (max-width: 768px) {
-          .logo-bar-2-badge-bar {
-            padding: 1rem;
-            justify-content: center;
-          }
-
-          .logo-bar-2-center-section {
-            order: 3;
-            width: 100%;
-            margin-top: 0.5rem;
-          }
-
-          .logo-bar-2-left-section {
-            order: 1;
-          }
-
-          .logo-bar-2-right-section {
-            order: 2;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .logo-bar-2-badge-bar {
-            gap: 0.75rem;
-            display:block;
-          }
-
-          .logo-bar-2-left-section{
-          display: block;
-          }
-
-          .logo-bar-2-center-section{
-          display: block;
-          }
-
-          .logo-bar-2-trustpilot-badge {
-            padding: 0.35rem 0.6rem;
-          }
-
-          .logo-bar-2-trustpilot-logo {
-            font-size: 0.65rem;
-          }
-
-          .logo-bar-2-star {
-            width: 0.65rem;
-            height: 0.65rem;
-          }
-
-          .logo-bar-2-satisfaction-badge {
-            width: 2.5rem;
-            height: 2.5rem;
-            font-size: 0.45rem;
-            padding: 0.4rem;
-          }
-        }
-      `}</style>
-    </>
+    </div>
   );
 }

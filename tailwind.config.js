@@ -7,7 +7,24 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        'sans': ['TuskerGrotesk', 'sans-serif'],
         'tusker': ['TuskerGrotesk', 'sans-serif'],
+      },
+      // Customize font weights to make them less heavy
+      fontWeight: {
+        thin: '100',
+        extralight: '100',
+        light: '100',
+        normal: '100',
+        medium: '100',
+        semibold: '200',
+        bold: '200',
+        extrabold: '300',
+        black: '300',
+      },
+      // Adding letter spacing to TuskerGrotesk font
+      letterSpacing: {
+        'tusker': '0.025em',
       },
       // Adding the missing xs breakpoint
       screens: {
