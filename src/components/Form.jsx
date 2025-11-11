@@ -48,11 +48,11 @@ export default function ManuscriptCTASection() {
             
             {/* Left Section - Content */}
             <div className="flex flex-col items-start justify-center w-full min-w-0 order-1 lg:order-1">
-              <h1 className="text-white text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 leading-tight uppercase tracking-[1px] font-tusker 2xl:text-[32px] xl:text-[28px] lg:text-[26px] md:text-[24px] md:mb-4 sm:text-[22px] sm:mb-4 xs:text-[20px] xs:mb-3 break-words w-full">
+              <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4 sm:mb-6 leading-tight uppercase tracking-[1px] font-tusker xs:text-[18px] xs:mb-3 sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[32px] break-words w-full">
                 GET YOUR MANUSCRIPT PUBLISHED WITH US
               </h1>
               
-              <p className="text-[14px] text-[rgba(255,255,255,0.85)] mb-[35px] leading-relaxed 2xl:text-[15px] xl:text-[14px] lg:text-[13px] md:text-[13px] md:mb-[30px] sm:text-[12px] sm:mb-[25px] xs:text-[11px] xs:mb-5 break-words w-full">
+              <p className="text-[13px] text-[rgba(255,255,255,0.85)] mb-[25px] leading-relaxed xs:text-[11px] xs:mb-5 sm:text-[12px] sm:mb-[25px] md:text-[13px] md:mb-[30px] lg:text-[13px] xl:text-[14px] 2xl:text-[15px] break-words w-full">
                 Transform your manuscript into a professionally published book with our comprehensive publishing services. 
                 Our expert team will guide you through every step of the process, from editing to distribution.
               </p>

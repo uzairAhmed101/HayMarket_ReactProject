@@ -31,7 +31,7 @@ export default function AboutHaymarket() {
       </motion.div>
       
       {/* Header Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
+      <div className="w-full mx-auto px-0 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
         <motion.div 
           className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: -20 }}
@@ -40,7 +40,7 @@ export default function AboutHaymarket() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.h1 
-            className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-2 text-purple-600"
+            className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-2 text-purple-600"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -49,7 +49,7 @@ export default function AboutHaymarket() {
             ABOUT HAYMARKET PUBLISHERS
           </motion.h1>
           <motion.p 
-            className="text-gray-700 text-sm sm:text-base lg:text-sm max-w-3xl mx-auto px-4"
+            className="text-gray-700 text-sm max-w-3xl mx-auto px-2 sm:px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -61,7 +61,7 @@ export default function AboutHaymarket() {
         </motion.div>
 
         {/* Main Content Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
           <motion.div 
             className="order-2 lg:order-1"
@@ -71,7 +71,7 @@ export default function AboutHaymarket() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.h2 
-              className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6"
+              className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -81,7 +81,7 @@ export default function AboutHaymarket() {
               <span className="text-gray-900">STORY</span>
             </motion.h2>
 
-            <div className="space-y-6 sm:space-y-6 text-gray-700 text-sm sm:text-sm">
+            <div className="space-y-4 sm:space-y-6 text-gray-700 text-sm">
               <motion.p
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -143,7 +143,7 @@ export default function AboutHaymarket() {
       </div>
 
       {/* Optional: Add some breathing room at the bottom */}
-      <div className="h-12 sm:h-16 lg:h-20"></div>
+      <div className="h-8 sm:h-12 lg:h-20"></div>
     </div>
   );
 }

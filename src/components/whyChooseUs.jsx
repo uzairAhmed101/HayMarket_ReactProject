@@ -57,7 +57,7 @@ export default function WhyChooseUs() {
             whileHover={{ y: -10 }}
           >
             {/* Card Box */}
-            <div className="bg-[#f0f0f0] rounded-[20px] p-4 sm:p-3 md:p-4 lg:p-3 xl:p-3 mb-5 sm:mb-5 md:mb-6 lg:mb-7.5 flex-grow min-h-[160px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[200px] text-center shadow-[1px_1px_5px_gray] relative w-full">
+            <div className="bg-[#f0f0f0] rounded-[20px] p-4 sm:p-3 md:p-4 lg:p-3 xl:p-3 mb-5 sm:mb-5 md:mb-6 lg:mb-7.5 flex-grow min-h-[160px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[200px] text-center shadow-[3px_3px_10px_rgba(0,0,0,0.3)] relative w-full">
               <h3 className="font-extrabold text-sm sm:text-sm md:text-sm lg:text-sm mb-2 text-[#8E2DE2] font-tusker">
                 {card.title}
               </h3>
@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
             </div>
 
             {/* Number */}
-            <div className="text-lg sm:text-5xl md:text-7xl lg:text-9xl font-bold text-[#8E2DE2] text-center absolute bottom-[-15px] sm:bottom-[-20px] md:bottom-[-25px] lg:bottom-[-33px] left-1/2 transform -translate-x-1/2 w-full font-tusker">
+            <div className="text-lg sm:text-5xl md:text-7xl lg:text-9xl font-bold bg-gradient-to-r from-[#6c07a3] to-[#460666] bg-clip-text text-transparent text-center absolute bottom-[-15px] sm:bottom-[-20px] md:bottom-[-25px] lg:bottom-[-33px] left-1/2 transform -translate-x-1/2 w-full font-tusker">
               {card.number}
             </div>
           </motion.div>

@@ -1,9 +1,9 @@
 import React from "react";
-import logoBar21 from "../assets/Images/LogoBar-2-1.png";
 import logoBar22 from "../assets/Images/LogoBar-2-2.png";
 import logoBar23 from "../assets/Images/LogoBar-2-3.png";
 import logoBar24 from "../assets/Images/LogoBar-2-4.png";
 import logoBar25 from "../assets/Images/LogoBar-2-5.png";
+import gifVideo from "../assets/Videos/HayMarket-all.gif";
 
 export default function Logobar2() {
   return (
@@ -12,9 +12,9 @@ export default function Logobar2() {
         {/* -------------------  LEFT (main logo) ------------------- */}
         <div className="flex-shrink-0">
           <img
-            src={logoBar21}
-            alt="Main logo"
-            className="h-15 sm:h-10 md:h-15 lg:h-15 xl:h-15 object-contain max-w-full"
+            src={gifVideo}
+            alt="Haymarket Publishers Animation"
+            className="h-25 sm:none md:h-25 lg:h-25 xl:h-25 object-contain max-w-full"
           />
         </div>
         <div className="flex items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 flex-1 justify-center">

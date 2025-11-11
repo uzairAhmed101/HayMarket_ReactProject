@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 // Keep laptop image imports
 import laptopImage from '../assets/Images/laptop-front-adhesive-notes-stucked-wall 2.webp';
-import laptopImage2 from '../assets/Images/Haymarket Publishers.png';
+import gifVideo from '../assets/Videos/HayMarket-all.gif';
 
 export default function Section7() {
   const testimonials = [
@@ -81,7 +81,7 @@ export default function Section7() {
               variants={item}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="bg-gradient-to-br from-[#9020f0] to-[#a020f0] p-[15px] sm:p-[10px] md:p-[18px] lg:p-[25px] text-white relative min-h-[120px] sm:min-h-[120px] md:min-h-[140px] lg:min-h-[160px] flex flex-col justify-between">
+              <div className=" bg-gradient-to-r from-[#6c07a3] to-[#460666] p-[15px] sm:p-[10px] md:p-[18px] lg:p-[25px] text-white relative min-h-[120px] sm:min-h-[120px] md:min-h-[140px] lg:min-h-[160px] flex flex-col justify-between">
                 <div className="text-[13px] sm:text-[13px] md:text-[14px] lg:text-[15px] font-semibold leading-[1.5] text-white mb-[10px] sm:mb-[10px] lg:mb-[15px] italic font-tusker">
                   {testimonial.quote}
                 </div>
@@ -112,10 +112,11 @@ export default function Section7() {
               alt="Laptop with adhesive notes" 
               className="w-full h-auto"
             />
+            {/* Replace the logo image with GIF */}
             <img 
-              src={laptopImage2} 
-              alt="Haymarket Publishers Logo" 
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[140px] lg:h-[180px]"
+              src={gifVideo} 
+              alt="Haymarket Publishers Animation" 
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[180px] lg:h-[220px]"
             />
           </div>
         </div>

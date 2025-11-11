@@ -9,7 +9,7 @@ export default function MissionVisionCards() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Mission Card */}
           <motion.div 
-            className="bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 rounded-xl p-6 shadow-lg"
+            className=" bg-gradient-to-r from-[#6c07a3] to-[#460666] rounded-xl p-6 shadow-lg"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -34,7 +34,7 @@ export default function MissionVisionCards() {
 
           {/* Vision Card */}
           <motion.div 
-            className="bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 rounded-xl p-6 shadow-lg"
+            className=" bg-gradient-to-r from-[#6c07a3] to-[#460666] rounded-xl p-6 shadow-lg"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}

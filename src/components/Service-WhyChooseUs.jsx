@@ -165,7 +165,7 @@ export default function WhyChooseUs() {
                 Attention to Detail and<br />Accuracy
               </motion.h2>
               <motion.p 
-                className="text-sm sm:text-base md:text-sm lg:text-lg text-gray-600"
+                className="text-sm sm:text-sm md:text-sm lg:text-sm text-gray-600"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 }}

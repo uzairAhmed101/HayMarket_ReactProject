@@ -54,14 +54,14 @@ export default function ContactForm() {
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Title and Subtitle Section */}
         <motion.div 
-          className="text-center m-20"
+          className="text-center my-10 sm:my-12 md:my-20 mx-4 sm:mx-6"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.h1 
-            className="text-4xl md:text-4xl font-extrabold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent mb-2"
+            className="text-3xl sm:text-4xl md:text-4xl font-extrabold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent mb-2"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -70,7 +70,7 @@ export default function ContactForm() {
             Get In Touch With Us
           </motion.h1>
           <motion.p 
-            className="text-gray-600 text-sm max-w-2xl mx-auto px-2"
+            className="text-gray-600 text-sm max-w-2xl mx-auto px-4 sm:px-6 md:px-2"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
