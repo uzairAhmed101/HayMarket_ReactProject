@@ -29,7 +29,7 @@ export default function GetInTouchSection() {
   };
 
   return (
-    <div className="bg-white py-12 md:py-20 lg:py-[112px] px-4 sm:px-6 md:px-12 lg:px-32 w-full relative overflow-hidden">
+    <div className="bg-white py-10 md:py-10 lg:py-10 px-20 sm:px-20 md:px-20 lg:px-20 w-full relative overflow-hidden">
       {/* ---------------- Decorative Wave Gradient ---------------- */}
       {/* Size and position adjusted for all screens */}
       <motion.div
@@ -51,7 +51,7 @@ export default function GetInTouchSection() {
 
       {/* ---------------- Main Title ---------------- */}
       <motion.h1 
-        className="text-3xl sm:text-3xl lg:text-5xl font-extrabold mb-6 text-center px-4 font-tusker text-[#383838]"
+        className="text-4xl sm:text-4xl lg:text-5xl font-extrabold mb-8 text-center px-4 font-tusker text-[#383838]"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}

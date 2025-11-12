@@ -5,7 +5,7 @@ import whyChooseUsImage2 from '../assets/Images/WhyChooseUs-2.webp';
 
 export default function WhyChooseUs() {
   return (
-    <div className="min-h-screen bg-white py-10 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <div className="min-h-screen bg-white py-10 sm:py-10 md:py-10 lg:py-10 px-20 sm:px-20 md:px-20 lg:px-20 xl:px-20">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div 

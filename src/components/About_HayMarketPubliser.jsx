@@ -40,7 +40,7 @@ export default function AboutHaymarket() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.h1 
-            className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-2 text-purple-600"
+            className="text-2xl sm:text-2xl lg:text-3xl font-extrabold mb-2 text-purple-600"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -49,7 +49,7 @@ export default function AboutHaymarket() {
             ABOUT HAYMARKET PUBLISHERS
           </motion.h1>
           <motion.p 
-            className="text-gray-700 text-sm max-w-3xl mx-auto px-2 sm:px-4"
+            className="text-gray-700 text-sm max-w-2xl mx-auto px-2 sm:px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}

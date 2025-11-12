@@ -26,7 +26,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-10 py-20 sm:px-8 md:px-12 py-10 lg:px-16 py-20 xl:px-20 py-20 relative">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-20 py-10 sm:px-20 md:px-20 py-10 lg:px-20 py-20 xl:px-20 py-10 relative">
       {/* Title */}
       <motion.div
         className="text-center mb-12 sm:mb-12 md:mb-16 lg:mb-20 text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 font-tusker"

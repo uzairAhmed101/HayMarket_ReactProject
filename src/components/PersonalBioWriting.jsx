@@ -30,13 +30,13 @@ export default function BioWritingHeroSection() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.h1 
-            className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 text-white leading-tight"
+            className="text-2xl sm:text-2xl lg:text-3xl font-extrabold mb-2 text-white leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            PROFESSIONAL BIO WRITING SERVICES BY EXPERT
+            PROFESSIONAL BIO WRITING SERVICES BY <br /> EXPERT
             <br />
             BIO WRITERS!
           </motion.h1>

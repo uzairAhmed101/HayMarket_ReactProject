@@ -23,7 +23,7 @@ export default function CoreValues() {
   ];
 
   return (
-    <div className="w-full py-40 px-4 relative">
+    <div className="w-full py-20 px-20 relative">
       {/* Decorative elements*/}
       <motion.div 
         className="absolute z-0 pointer-events-none top-[40px] sm:top-[-60px] md:-top-[120px] lg:-top-[200px] xl:-top-[180px] -left-1 sm:-left-2 md:-left-3 lg:-left-4 xl:-left-5 h-[40%] sm:h-[50%] md:h-[60%] lg:h-[70%] xl:h-[80%] origin-center"
@@ -71,7 +71,7 @@ export default function CoreValues() {
             return (
               <motion.div
                 key={index}
-                className="bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-xl p-5 shadow-lg transform transition-all duration-300 hover:scale-105 relative overflow-hidden group"
+                className="bg-[#8E2DE2] rounded-xl p-5 shadow-lg transform transition-all duration-300 hover:scale-105 relative overflow-hidden group"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -86,8 +86,8 @@ export default function CoreValues() {
                   transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
                   viewport={{ once: true, amount: 0.2 }}
                 >
-                  <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center shadow-md shadow-purple-500/50 group-hover:shadow-purple-500/80 transition-all duration-300">
-                    <Icon className="w-6 h-6 text-white" strokeWidth={2} />
+                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-md transition-all duration-300">
+                    <Icon className="w-6 h-6 text-[#8E2DE2]" strokeWidth={2} />
                   </div>
                 </motion.div>
 

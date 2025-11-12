@@ -5,10 +5,10 @@ import section2Img from '../assets/Images/Section2-img.webp';
 
 export default function StorySection() {
   return (
-    <section className="bg-white p-[20px] sm:p-[40px] md:p-[60px] lg:p-20 relative box-border">
+    <section className="bg-white px-[20px] py-10 sm:px-[20px] py-10 md:px-[20px] py-10 lg:px-20 py-10 relative box-border">
      {/* Decorative Element - Top Right */}
     <motion.div
-      className="absolute pointer-events-none z-0 top-[-40px] sm:top-[-80px] md:top-[-120px] lg:top-[-160px] xl:top-[-200px] right-[-10px] sm:right-[-15px] md:right-[-40px] lg:right-[-60px] xl:right-[-80px] h-[40%] sm:h-[50%] md:h-[60%] lg:h-[70%] xl:h-[80%] w-auto"
+      className="absolute pointer-events-none z-0 top-[-40px] sm:top-[-80px] md:top-[-120px] lg:top-[-160px] xl:top-[-200px] right-[-10px] sm:right-[-15px] md:right-[-15px] lg:right-[-15px] xl:right-[-15px] h-[40%] sm:h-[50%] md:h-[60%] lg:h-[70%] xl:h-[80%] w-auto"
       initial={{ opacity: 0, x: 100 }}
       whileInView={{
         opacity: 1,
@@ -41,7 +41,7 @@ export default function StorySection() {
             <span className="text-black">YOUR STORY</span>
           </h2>
 
-          <p className="text-[13px] xs:text-[13px] sm:text-xs md:text-xs lg:text-sm leading-relaxed mb-5 w-full sm:w-full lg:w-[400px]">
+          <p className="text-gray-600 text-sm xs:text-sm sm:text-sm md:text-sm lg:text-sm leading-relaxed mb-5 w-full sm:w-full lg:w-[400px]">
             In this era of digital media, anybody can become a world-famous being by just doing 
             what he does best. Authors use promotional tools that any individual or entity can 
             use. A story or anything can bring a person fame. Unlike earlier times, social media platforms have made life 
@@ -49,7 +49,7 @@ export default function StorySection() {
             and artists.
           </p>
 
-          <p className="text-[13px] xs:text-[13px] sm:text-xs md:text-xs lg:text-sm leading-relaxed mb-6 sm:mb-8 w-full sm:w-full lg:w-[400px]">
+          <p className="text-gray-600 text-sm xs:text-sm sm:text-sm md:text-sm lg:text-sm leading-relaxed mb-6 sm:mb-8 w-full sm:w-full lg:w-[400px]">
             Contributing to the publishing industry, Haymarket is a platform that allows authors, 
             bloggers, and any person to publish their work. In earlier times, there were only a few ways 
             for the publishing of a book. All these processes used to take ages in earlier times, but 
@@ -58,7 +58,7 @@ export default function StorySection() {
           </p>
 
           <div className="flex gap-4 flex-wrap">
-            <button className="bg-gradient-to-r from-[#8E2DE2] to-[#4A00E0] text-white text-xs font-semibold py-3.5 px-8 rounded-full shadow-lg hover:shadow-xl active:scale-95 transition-all duration-200 whitespace-nowrap w-full xs:w-full sm:w-auto font-tusker">
+            <button className="bg-[#8E2DE2] text-white text-xs font-semibold py-3.5 px-8 rounded-full shadow-lg hover:shadow-xl active:scale-95 transition-all duration-200 whitespace-nowrap w-full xs:w-full sm:w-auto font-tusker">
               Start Publishing Now
             </button>
             <button className="bg-white text-[#8E2DE2] text-xs font-semibold py-3 px-7 border-2 border-[#8E2DE2] rounded-full hover:bg-[#8E2DE2] hover:text-white transition-colors duration-200 whitespace-nowrap w-full xs:w-full sm:w-auto font-tusker">

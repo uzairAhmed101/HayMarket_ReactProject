@@ -5,7 +5,7 @@ import section3Img from '../assets/Images/Section3-img.webp';
 
 export default function AssistanceSection() {
   return (
-    <section className="bg-white py-[40px] sm:py-[50px] md:py-[60px] lg:py-[80px] xl:py-[112px] px-[15px] sm:px-[20px] md:px-[40px] lg:px-[65px] relative">
+    <section className="bg-white py-10 sm:py-10 md:py-10 lg:py-10 xl:py-10 px-20 sm:px-20 md:px-20 lg:px-20 relative">
       {/* Decorative wave element */}
       <motion.div 
         className="absolute pointer-events-none z-0 top-[-40px] sm:top-[-80px] md:top-[-120px] lg:top-[-160px] xl:top-[-200px] right-[-10px] sm:right-[-15px] md:right-[-40px] lg:right-[-60px] xl:right-[-80px] h-[40%] sm:h-[50%] md:h-[60%] lg:h-[70%] xl:h-[80%] w-auto"
@@ -66,12 +66,12 @@ export default function AssistanceSection() {
 
         {/* Right side - Content */}
         <div className="max-w-full lg:max-w-[600px] order-2 lg:order-2 px-2 sm:px-0">
-          <h2 className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 leading-[1.2] text-center lg:text-left font-tusker">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-extrabold mb-6 leading-[1.1] text-center lg:text-left">
             <span className="text-[#8E2DE2]">NEED ASSISTANCE?</span><br />
             <span className="text-black">HERE'S HOW YOU CAN GET OUR HELP</span>
           </h2>
           
-          <p className="text-[14px] sm:text-[14px] md:text-[15px] leading-[1.8] text-[#555] mb-[25px] sm:mb-[30px] text-center lg:text-left">
+          <p className="text-[14px] sm:text-[14px] md:text-[15px] leading-[1.5] text-[#555] mb-[25px] sm:mb-[30px] text-center lg:text-left">
             To ensure you get the most effective and personalized support, simply follow the step-by-step guide 
             below — each step is designed to help you identify the best solution tailored to your specific needs and 
             preferences.
@@ -99,7 +99,7 @@ export default function AssistanceSection() {
 
           <div className="flex gap-[15px] flex-wrap justify-center lg:justify-start">
             {/* Primary Button */}
-            <button className="bg-gradient-to-br from-[#8E2DE2] to-[#4A00E0] text-white border-none py-[12px] sm:py-[14px] px-[28px] sm:px-[32px] rounded-[25px] text-[13px] sm:text-[14px] font-semibold cursor-pointer shadow-[0_4px_12px_rgba(142,45,226,0.3)] hover:shadow-[0_6px_16px_rgba(142,45,226,0.4)] active:scale-95 transition-transform w-full sm:w-auto font-tusker">
+            <button className="bg-[#8E2DE2] text-white border-none py-[12px] sm:py-[14px] px-[28px] sm:px-[32px] rounded-[25px] text-[13px] sm:text-[14px] font-semibold cursor-pointer shadow-[0_4px_12px_rgba(142,45,226,0.3)] hover:shadow-[0_6px_16px_rgba(142,45,226,0.4)] active:scale-95 transition-transform w-full sm:w-auto font-tusker">
               Get In Touch Today
             </button>
 

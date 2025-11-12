@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import headerLogo from '../assets/Images/Header-Logo.png';
+import navbarLogo from '../assets/Images/HayMarket-Navbar.png';
 import emailIcon from '../assets/Images/Email-Icon.png';
 import callIcon from '../assets/Images/Call-Icon.png';
 
@@ -10,15 +10,35 @@ export default function Header() {
   const location = useLocation();
 
   return (
-    <header className="w-[90%] mx-auto md:w-[95%] sm:w-[98%] xs:w-[99%] max-w-full p-4">
+    <>
+      <header className="w-full max-w-full">
       <div className="w-full flex items-center justify-between sm:flex-wrap sm:p-0 sm:pl-[18px] sm:pr-[35px]">
         {/* Logo */}
-        <div className="flex-shrink-0 sm:order-1">
-          <img 
-            src={headerLogo} 
-            alt="Haymarket Publishers Logo" 
-            className="w-[80%] h-[80%] object-contain"
-          />
+        <div className="flex-shrink-0 sm:order-1 relative">
+          <div className="relative w-[100px] h-[100px] flex items-center justify-center">
+            {/* Circular text */}
+            <div className="absolute inset-0 animate-spin-slow">
+              <svg className="w-full h-full" viewBox="0 0 100 100">
+                <defs>
+                  <path id="circlePath" d="M 50, 50 m -20, 0 a 20,20 0 1,1 40,0 a 20,20 0 1,1 -40,0" />
+                </defs>
+                <text className="text-[8px] font-bold fill-[#000000]">
+                  <textPath xlinkHref="#circlePath" startOffset="0" spacing="auto">
+                    &nbsp;&nbsp;HayMarket &nbsp;&nbsp;- &nbsp;&nbsp;Publisher's &nbsp;-
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+            
+            {/* Logo image */}
+            <div className="relative z-10">
+              <img 
+                src={navbarLogo} 
+                alt="Haymarket Publishers Logo" 
+                className="w-auto h-auto max-h-[60px] max-w-[100px] object-contain"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Contact Info and CTA Button Container */}
@@ -105,5 +125,19 @@ export default function Header() {
         </div>
       </div>
     </header>
+    <style>{`
+      @keyframes spin-slow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 20s linear infinite;
+      }
+    `}</style>
+    </>
   );
 }

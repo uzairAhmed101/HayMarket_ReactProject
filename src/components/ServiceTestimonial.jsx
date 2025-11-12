@@ -27,7 +27,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-black py-10 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-12">
+    <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-black py-10 sm:py-10 px-20 sm:px-20 md:px-20 lg:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.h1 

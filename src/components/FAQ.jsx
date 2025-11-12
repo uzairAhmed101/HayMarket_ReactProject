@@ -168,7 +168,7 @@ export default function FAQSellers() {
           transition={{ duration: 0.5, delay: 0.5 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <button className="px-8 py-3 bg-gradient-to-br from-[#8E2DE2] to-[#4A00E0] text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+          <button className="px-8 py-3 bg-[#8E2DE2] text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200">
             LOAD MORE
           </button>
         </motion.div>

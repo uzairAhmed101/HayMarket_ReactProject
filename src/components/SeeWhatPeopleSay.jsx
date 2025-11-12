@@ -59,9 +59,9 @@ export default function Section7() {
 
   return (
     <>
-      <div className="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 relative flex flex-col items-center justify-center">
+      <div className="px-10 py-10 sm:px-10 md:px-10 lg:px-10 xl:px-10 relative flex flex-col items-center justify-center">
         <div className="text-center mb-[30px] sm:mb-[35px] md:mb-[40px] lg:mb-[50px]">
-          <h1 className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 text-[#1a1a1a] tracking-[0.5px] font-tusker">
+          <h1 className="text-2xl sm:text-2xl lg:text-3xl font-extrabold mb-2 text-[#1a1a1a] tracking-[0.5px] font-tusker">
             SEE WHAT PEOPLE SAY <span className="text-[#a020f0]">ABOUT US</span>
           </h1>
         </div>

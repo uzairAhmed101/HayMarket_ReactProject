@@ -56,7 +56,7 @@ export default function BiographyStepsSection() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-white py-6 sm:py-10 lg:py-20 px-2 sm:px-4 lg:px-8 overflow-hidden">
+    <div className="relative min-h-screen bg-white py-10 sm:py-10 lg:py-10 px-20 sm:px-20 lg:px-20 overflow-hidden">
       {/* Decorative elements*/}
       <motion.div 
         className="
@@ -90,7 +90,7 @@ export default function BiographyStepsSection() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.h1 
-            className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 leading-tight"
+            className="text-2xl sm:text-2xl lg:text-3xl font-extrabold mb-2 leading-tight"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -102,7 +102,7 @@ export default function BiographyStepsSection() {
           </motion.h1>
           
           <motion.p 
-            className="text-gray-700 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mt-1"
+            className="text-gray-700 text-xs sm:text-sm md:text-sm max-w-2xl mx-auto mt-1"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}

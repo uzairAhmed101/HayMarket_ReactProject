@@ -25,7 +25,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="py-4 px-4 md:py-6 md:px-6 relative">
+    <div className="py-10 px-20 md:py-10 md:px-20 relative">
       {/* Decorative Element - Top Right */}
       <motion.div
         className="

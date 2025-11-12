@@ -36,7 +36,7 @@ export default function BannerSection() {
           <p className="text-[11px] sm:text-[12px] md:text-[13px] font-semibold tracking-wider text-[#333] mb-[10px] sm:mb-[15px]">
             BECOME A GLOBALLY PUBLISHED AUTHOR TODAY
           </p>
-          <h1 className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 font-tusker" style={{ fontFamily: 'TuskerGrotesk, Arial, sans-serif' }}>
+          <h1 className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6">
             <span className="text-[#8E2DE2]">SELF PUBLISH AND BE A</span><br />
             <span className="text-black">WORLD-FAMOUS AUTHOR TODAY!</span>
           </h1>
@@ -47,7 +47,7 @@ export default function BannerSection() {
             expand your book's visibility and connect with more readers.
           </p>
           <div className="flex gap-[10px] sm:gap-[15px] flex-wrap justify-center lg:justify-start">
-            <button className="bg-gradient-to-r from-[#8E2DE2] to-[#4A00E0] text-white border-0 p-[12px_24px] sm:p-[14px_32px] rounded-[25px] text-[13px] sm:text-sm font-semibold shadow-[0_4px_12px_rgba(142,45,226,0.3)] hover:shadow-[0_6px_16px_rgba(142,45,226,0.4)]">
+            <button className="bg-[#9521d0] text-white border-0 p-[12px_24px] sm:p-[14px_32px] rounded-[25px] text-[13px] sm:text-sm font-semibold shadow-[0_4px_12px_rgba(142,45,226,0.3)] hover:shadow-[0_6px_16px_rgba(142,45,226,0.4)]">
               Get Started Now
             </button>
             <button className="bg-white text-[#8E2DE2] border-2 border-[#8E2DE2] p-[10px_20px] sm:p-[12px_28px] rounded-[25px] text-[13px] sm:text-sm font-semibold hover:bg-[#8E2DE2] hover:text-white">
@@ -57,19 +57,21 @@ export default function BannerSection() {
         </div>
 
         {/* Right Form */}
-        <div className="flex justify-center lg:justify-end w-full">
-          <div className="bg-white rounded-[15px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] overflow-hidden w-full max-w-[450px]">
-            <div className="bg-gradient-to-r from-[#8E2DE2] to-[#4A00E0] p-4 sm:p-5 text-center">
-              <h2 className="text-white text-lg sm:text-xl font-semibold tracking-wider font-tusker" style={{ fontFamily: 'TuskerGrotesk, Arial, sans-serif' }}>LET'S GET STARTED !</h2>
+        <div className="flex justify-center lg:justify-center w-full">
+          <div className="bg-white rounded-[12px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] overflow-hidden w-full max-w-[350px] relative">
+            {/* Purple Circles */}
+            <div className="absolute top-0 right-0 w-[100%] h-6 bg-[#8E2DE2]"></div>
+            <div className="pt-15 text-center">
+              <h2 className="text-[#9521d0] text-lg sm:text-xl font-extrabold">LET'S GET STARTED !</h2>
             </div>
-            <form onSubmit={handleSubmit} className="p-[20px] sm:p-[30px] flex flex-col gap-[12px] sm:gap-[15px]">
+            <form onSubmit={handleSubmit} className="p-[15px] sm:p-[20px] flex flex-col gap-[8px] sm:gap-[10px]">
               <input
                 type="text"
                 name="name"
                 placeholder="Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full p-[12px_14px] sm:p-[14px_16px] border border-[#ddd] rounded-lg text-[13px] sm:text-sm focus:border-[#8E2DE2] focus:outline-none"
+                className="w-full p-[10px_12px] sm:p-[12px_14px] border border-[#ddd] rounded-lg text-[12px] sm:text-xs focus:border-[#8E2DE2] focus:outline-none"
                 required
               />
               <input
@@ -78,7 +80,7 @@ export default function BannerSection() {
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-[12px_14px] sm:p-[14px_16px] border border-[#ddd] rounded-lg text-[13px] sm:text-sm focus:border-[#8E2DE2] focus:outline-none"
+                className="w-full p-[10px_12px] sm:p-[12px_14px] border border-[#ddd] rounded-lg text-[12px] sm:text-xs focus:border-[#8E2DE2] focus:outline-none"
                 required
               />
               <input
@@ -87,7 +89,7 @@ export default function BannerSection() {
                 placeholder="Phone Number"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full p-[12px_14px] sm:p-[14px_16px] border border-[#ddd] rounded-lg text-[13px] sm:text-sm focus:border-[#8E2DE2] focus:outline-none"
+                className="w-full p-[10px_12px] sm:p-[12px_14px] border border-[#ddd] rounded-lg text-[12px] sm:text-xs focus:border-[#8E2DE2] focus:outline-none"
                 required
               />
               <textarea
@@ -95,10 +97,10 @@ export default function BannerSection() {
                 placeholder="Message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full p-[12px_14px] sm:p-[14px_16px] border border-[#ddd] rounded-lg text-[13px] sm:text-sm focus:border-[#8E2DE2] focus:outline-none resize-y min-h-[100px]"
+                className="w-full p-[10px_12px] sm:p-[12px_14px] border border-[#ddd] rounded-lg text-[12px] sm:text-xs focus:border-[#8E2DE2] focus:outline-none resize-y min-h-[80px]"
                 required
               ></textarea>
-              <button type="submit" className="bg-gradient-to-r from-[#8E2DE2] to-[#4A00E0] text-white border-0 p-[12px_28px] sm:p-[14px_32px] rounded-[25px] text-[14px] sm:text-[15px] font-semibold shadow-[0_4px_12px_rgba(142,45,226,0.3)] hover:shadow-[0_6px_16px_rgba(142,45,226,0.4)] self-center mt-[8px] sm:mt-[10px]">
+              <button type="submit" className="bg-[#9521d0] text-white border-0 p-[10px_24px] sm:p-[12px_28px] rounded-[20px] text-[13px] sm:text-[14px] font-semibold shadow-[0_4px_12px_rgba(142,45,226,0.3)] hover:shadow-[0_6px_16px_rgba(142,45,226,0.4)] self-center mt-[6px] sm:mt-[8px]">
                 Submit
               </button>
             </form>

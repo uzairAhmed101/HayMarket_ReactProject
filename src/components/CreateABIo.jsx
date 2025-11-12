@@ -12,7 +12,7 @@ export default function BiographyNichesSection() {
   ];
 
   return (
-    <div className="bg-white py-6 px-2 sm:py-8 sm:px-4 md:py-12 md:px-8 relative">
+    <div className="bg-white py-10 px-20 sm:py-10 sm:px-20 md:py-10 md:px-20 relative">
       {/* Decorative elements */}
       <motion.div 
         className="
@@ -46,7 +46,7 @@ export default function BiographyNichesSection() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.h1 
-            className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 leading-tight"
+            className="text-2xl sm:text-2xl lg:text-3xl font-extrabold mb-6 leading-tight"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -57,7 +57,7 @@ export default function BiographyNichesSection() {
             <span className="text-black">FOLLOWING NICHES</span>
           </motion.h1>
           
-          <div className="max-w-3xl mx-auto space-y-2 text-gray-700 text-xs sm:text-sm md:text-base">
+          <div className="max-w-2xl mx-auto text-gray-700 text-xs sm:text-sm md:text-sm">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

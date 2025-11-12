@@ -13,7 +13,7 @@ export default function PublicFigureBiography() {
   ];
 
   return (
-    <div className="min-h-screen bg-white py-6 px-2 sm:py-10 sm:px-4 md:py-16 md:px-8 relative">
+    <div className="min-h-screen bg-white py-0 px-10 sm:py-0 sm:px-10 md:py-0 md:px-10 relative">
       {/* Decorative elements */}
       <motion.div 
         className="
@@ -48,7 +48,7 @@ export default function PublicFigureBiography() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h1 
-              className="text-3xl sm:text-3xl lg:text-4xl font-extrabold mb-6 text-gray-900 uppercase"
+              className="text-2xl sm:text-2xl lg:text-3xl font-extrabold mb-6 text-gray-900 uppercase"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}

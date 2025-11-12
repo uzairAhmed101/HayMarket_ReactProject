@@ -9,7 +9,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="w-[90%] md:w-[95%] sm:w-[98%] xs:w-[99%] mx-auto relative">
+    <nav className="w-full relative">
       <div className="bg-[#890BCA] w-full rounded-[50px]">
         {/* Mobile Menu Button */}
         <button className="sm:hidden flex flex-col bg-transparent border-none cursor-pointer p-[15px_10px]" onClick={toggleMenu}>

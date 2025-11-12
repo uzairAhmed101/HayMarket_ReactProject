@@ -43,9 +43,9 @@ export default function BlogsSection() {
 
   return (
     <>
-      <div className="mx-auto w-full relative flex flex-col items-center justify-center sm:p-8 md:p-15 lg:px-20">
+      <div className="mx-auto w-full relative flex flex-col items-center justify-center sm:p-8 md:px-20 py-10 lg:px-20 py-10">
         <motion.div 
-          className="absolute h-[30%] sm:h-[35%] md:h-[40%] lg:h-[45%] xl:h-[50%] left-0 top-0"
+          className="absolute h-[30%] sm:h-[35%] md:h-[40%] lg:h-[45%] xl:h-[50%] left-0 top-[-20%]"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{
             opacity: 1,

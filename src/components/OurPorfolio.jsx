@@ -36,7 +36,7 @@ export default function PortfolioSection() {
   };
 
   return (
-    <div className="min-h-screen py-0 px-1 sm:px-1 lg:px-1 relative overflow-hidden">
+    <div className="min-h-screen py-10 px-10 sm:px-20 lg:px-20 relative overflow-hidden">
       {/* Decorative elements */}
       <motion.div 
         className="absolute z-0 pointer-events-none top-[200px] left-[-200px] h-[600px] w-[600px]"
