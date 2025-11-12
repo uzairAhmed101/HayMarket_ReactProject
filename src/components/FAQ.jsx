@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function FAQSellers() {
@@ -63,41 +63,49 @@ export default function FAQSellers() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const FAQItem = ({ faq, index }) => (
-    <motion.div 
-      className="mb-3"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <button
-        onClick={() => toggleFAQ(index)}
-        className="w-full flex items-center justify-between p-4 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors duration-200 text-left"
-      >
-        <span className="font-medium text-gray-800 text-sm md:text-base pr-4">
-          {faq.question}
-        </span>
-        <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-white rounded-full">
-          {openIndex === index ? (
-            <ChevronUp className="w-5 h-5 text-purple-600" />
-          ) : (
-            <ChevronDown className="w-5 h-5 text-purple-600" />
-          )}
-        </div>
-      </button>
-      {openIndex === index && (
-        <motion.div 
-          className="mt-2 p-10 bg-white rounded-lg border border-gray-200"
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          transition={{ duration: 0.3 }}
+  // Separate component for FAQ items to prevent re-renders
+  const FAQItem = React.memo(({ faq, index }) => {
+    const isOpen = openIndex === index;
+    
+    return (
+      <div className="mb-3">
+        <motion.button
+          onClick={() => toggleFAQ(index)}
+          className="w-full flex items-center justify-between p-4 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors duration-200 text-left"
+          // Removed initial and whileInView animations to prevent re-triggering
+          animate={{ opacity: 1, y: 0 }} // Always maintain the final state
         >
-          <p className="text-gray-600 text-sm md:text-base">{faq.answer}</p>
-        </motion.div>
-      )}
-    </motion.div>
-  );
+          <span className="font-medium text-gray-800 text-sm md:text-base pr-4">
+            {faq.question}
+          </span>
+          <motion.div 
+            className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-white rounded-full"
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {isOpen ? (
+              <ChevronUp className="w-5 h-5 text-purple-600" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-purple-600" />
+            )}
+          </motion.div>
+        </motion.button>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div 
+              className="mt-2 p-10 bg-white rounded-lg border border-gray-200"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <p className="text-gray-600 text-sm md:text-base">{faq.answer}</p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    );
+  });
 
   return (
     <div className="min-h-screen py-30 px-4 sm:px-6 lg:px-20 relative overflow-hidden">

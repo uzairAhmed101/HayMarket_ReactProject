@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import halfCircleGradient from '../assets/Images/star_gradient (1).png';
+import aboutImage from '../assets/Images/AboutUs-1.webp';
 
 export default function AboutHaymarket() {
   return (
@@ -129,7 +130,7 @@ export default function AboutHaymarket() {
           >
             <div className="relative w-full max-w-md lg:max-w-lg">
               <motion.img 
-                src="/src/assets/Images/AboutUs-1.webp" 
+                src={aboutImage} 
                 alt="About Haymarket Publishers" 
                 className="w-full h-auto object-cover"
                 initial={{ opacity: 0, scale: 0.9 }}

@@ -51,7 +51,7 @@ export default function WritingServiceLanding() {
   ];
 
   return (
-    <div className="border-t border-white min-h-screen bg-[#3A0368] p-2 sm:p-3 md:p-4 lg:p-5 xl:p-6 font-tusker">
+    <div className="border-t border-white bg-[#3A0368] px-20 py-10 sm:px-20 py-10 md:px-4 py-10 lg:px-5 py-10 xl:px-6 py-10">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 items-start">
         {/* Left Section - Content */}
         <motion.div 
